@@ -25,6 +25,12 @@ export const projectLinksConfig = [
     isExternal: true,
   },
   {
+    key: "nestedevil",
+    name: "Nested Evil",
+    url: "https://linktr.ee/nestedevil",
+    isExternal: true,
+  },
+  {
     key: "qalamis",
     name: "Qalamis",
     url: "https://linktr.ee/qalamis",
