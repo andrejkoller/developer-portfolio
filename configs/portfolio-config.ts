@@ -77,12 +77,6 @@ export const portfolioConfig: PortfolioSection[] = [
         images: 5,
       },
       {
-        key: "nested-evil",
-        name: "Nested Evil",
-        description: "Psychological Survival Horror Franchise",
-        images: 5,
-      },
-      {
         key: "fading-hell",
         name: "Fading Hell",
         description: "Hardcore Punk / Metalcore Band",
