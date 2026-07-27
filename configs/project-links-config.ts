@@ -2,7 +2,7 @@ export interface ProjectLink {
   key: string;
   name: string;
   url: string;
-  isExternal: boolean;
+  isExternal?: boolean;
 }
 
 export const projectLinksConfig = [

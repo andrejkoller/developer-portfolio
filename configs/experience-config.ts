@@ -11,7 +11,7 @@ export const experienceConfig = [
   {
     key: "freelance",
     company: "Freelance",
-    role: "Software Engineer",
+    role: "Software Developer",
     from: "2025",
     to: "Present",
   },

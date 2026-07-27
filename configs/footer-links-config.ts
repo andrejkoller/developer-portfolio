@@ -1,23 +1,27 @@
 export interface FooterLink {
   key: string;
   name: string;
-  href: string;
+  url: string;
+  isExternal?: boolean;
 }
 
 export const footerLinksConfig = [
   {
     key: "x",
     name: "X",
-    href: "https://x.com/andrejkoller",
+    url: "https://x.com/andrejkoller",
+    isExternal: true,
   },
   {
     key: "github",
     name: "GitHub",
-    href: "https://github.com/andrejkoller",
+    url: "https://github.com/andrejkoller",
+    isExternal: true,
   },
   {
     key: "linkedin",
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/andrejkoller",
+    url: "https://www.linkedin.com/in/andrejkoller",
+    isExternal: true,
   },
 ];
