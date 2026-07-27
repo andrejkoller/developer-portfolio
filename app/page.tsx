@@ -61,7 +61,9 @@ export default function HomePage() {
                 {Array.from({ length: project.images ?? 0 }).map((_, i) => (
                   <div
                     key={i}
-                    className="bg-(--color-foreground) h-112.5 w-full rounded-2xl"
+                    className="bg-(--color-foreground) h-112.5 w-full rounded-xl"
+                    role="img"
+                    aria-label={project.alt}
                   />
                 ))}
               </div>
@@ -93,6 +95,11 @@ export default function HomePage() {
                 href={project.url}
                 target={project.isExternal ? "_blank" : "_self"}
                 rel={project.isExternal ? "noopener noreferrer" : undefined}
+                title={
+                  project.isExternal
+                    ? `${project.name} (opens in a new tab)`
+                    : undefined
+                }
               >
                 {project.name}
               </Link>

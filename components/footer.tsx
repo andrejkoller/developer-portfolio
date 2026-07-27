@@ -13,9 +13,10 @@ export const Footer = () => {
             {footerLinksConfig.map((link) => (
               <Link
                 key={link.key}
-                href={link.href}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={`${link.name} (opens in a new tab)`}
               >
                 {link.name}
               </Link>

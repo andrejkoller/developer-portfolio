@@ -3,6 +3,7 @@ export interface PortfolioProject {
   name: string;
   description?: string;
   images?: number;
+  alt?: string;
 }
 
 export interface PortfolioSection {
@@ -21,42 +22,49 @@ export const portfolioConfig: PortfolioSection[] = [
         name: "Athanasa",
         description: "Cloud Platform",
         images: 7,
+        alt: "Athanasa Cloud Platform",
       },
       {
         key: "kleisa",
         name: "Kleisa",
         description: "Identity & Security",
         images: 6,
+        alt: "Kleisa Identity & Security",
       },
       {
         key: "qalamis",
         name: "Qalamis",
         description: "Digital Library Platform",
         images: 5,
+        alt: "Qalamis Digital Library Platform",
       },
       {
         key: "omelia-ui",
         name: "Omelia UI",
         description: "React Component Library",
         images: 5,
+        alt: "Omelia UI React Component Library",
       },
       {
         key: "sophia-js",
         name: "Sophia.js",
         description: "TypeScript Toolkit",
         images: 4,
+        alt: "Sophia.js TypeScript Toolkit",
       },
       {
         key: "lofty-charts",
         name: "Lofty Charts",
         description: "Charting Library",
         images: 3,
+        alt: "Lofty Charts Charting Library",
       },
       {
         key: "elegant-icons",
         name: "Elegant Icons",
         description: "SVG Icon Library",
         images: 3,
+        alt: "Elegant Icons SVG Icon Library",
       },
     ],
   },
@@ -69,18 +77,21 @@ export const portfolioConfig: PortfolioSection[] = [
         name: "Omorfia Font",
         description: "Typeface Design",
         images: 4,
+        alt: "Omorfia Font Typeface Design",
       },
       {
         key: "eternal-bravery",
         name: "Eternal Bravery",
         description: "Epic Science Fantasy Universe",
         images: 5,
+        alt: "Eternal Bravery Epic Science Fantasy Universe",
       },
       {
         key: "fading-hell",
         name: "Fading Hell",
         description: "Hardcore Punk / Metalcore Band",
         images: 4,
+        alt: "Fading Hell Hardcore Punk / Metalcore Band",
       },
     ],
   },
