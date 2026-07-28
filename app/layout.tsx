@@ -3,7 +3,7 @@ import "./styles/globals.css";
 import ClientLayout from "./client-layout";
 
 export const metadata: Metadata = {
-  title: "Designer & Frontend Engineer",
+  title: "Andrej Koller - Designer & Frontend Engineer",
   description:
     "Andrej Koller is a designer and frontend engineer from Ekibastuz, Kazakhstan. Based in Passau, Germany.",
 };
