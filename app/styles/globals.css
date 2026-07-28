@@ -33,6 +33,10 @@
   --color-border: rgb(204, 204, 204);
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--color-background);
   color: var(--color-primary);
