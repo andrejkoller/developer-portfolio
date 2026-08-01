@@ -10,7 +10,7 @@ export default function HomePage() {
       <section className="flex flex-col gap-4 mb-16 fade-in delay-1">
         <p className="text-(--color-muted)">
           <span className="text-(--color-primary)">Andrej Koller</span> is a
-          designer and frontend engineer from Ekibastuz, Kazakhstan.
+          software developer from Ekibastuz, Kazakhstan.
         </p>
         <p className="text-(--color-muted)">Based in Passau, Germany.</p>
       </section>
