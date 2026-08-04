@@ -28,18 +28,41 @@ export default function HomePage() {
             </div>
             <p className="flex items-center whitespace-nowrap text-(--color-muted)">
               <span>{experience.from}</span>
-              <span className="mx-1">—</span>
+              <span>-</span>
               <span>{experience.to}</span>
             </p>
           </div>
         ))}
       </section>
 
+      {/* Featured */}
+      <section className="fade-in delay-3">
+        <h3 className="mb-8 text-sm font-bold">Featured</h3>
+        <div className="mb-24">
+          <p className="mb-4">
+            <span className="text-(--color-primary)">Eternal Bravery</span>
+            <span className="mx-1 text-(--color-muted)">—</span>
+            <span className="text-(--color-muted)">
+              Epic Science Fantasy Universe
+            </span>
+          </p>
+          <div className="flex flex-col gap-4">
+            <div
+              className="bg-(--color-foreground) h-112.5 w-full rounded-xl"
+              role="img"
+              aria-label="Eternal Bravery Epic Science Fantasy Universe"
+            />
+          </div>
+        </div>
+      </section>
+
+      <hr className="border-t border-(--color-border) mb-16" />
+
       {/* Products & Branding */}
       {portfolioConfig.map((section, sectionIndex) => (
         <section
           key={section.key}
-          className={`fade-in delay-${3 + sectionIndex}`}
+          className={`fade-in delay-${4 + sectionIndex}`}
         >
           <h3 className="mb-8 text-sm font-bold">{section.label}</h3>
           {section.projects.map((project) => (
@@ -73,7 +96,7 @@ export default function HomePage() {
       ))}
 
       {/* Skills & ongoing projects */}
-      <section className="flex flex-col gap-4 mb-12 fade-in delay-5">
+      <section className="flex flex-col gap-4 mb-12 fade-in delay-6">
         <h2 className="text-sm font-bold">Skills & Technologies</h2>
         <p className="text-(--color-muted)">
           I design and build modern, performant web interfaces using HTML, SCSS,
@@ -82,7 +105,7 @@ export default function HomePage() {
           digital experiences crafted with TailwindCSS and Figma.
         </p>
       </section>
-      <section className="flex flex-col gap-4 mb-12 fade-in delay-6">
+      <section className="flex flex-col gap-4 mb-12 fade-in delay-7">
         <h2 className="text-sm font-bold">Ongoing Projects</h2>
         <p className="text-(--color-muted)">
           Builds ongoing projects spanning music, storytelling, and open source,
