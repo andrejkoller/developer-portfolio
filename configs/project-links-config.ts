@@ -30,4 +30,10 @@ export const projectLinksConfig = [
     url: "https://linktr.ee/qalamis",
     isExternal: true,
   },
+  {
+    key: "insaneprophet",
+    name: "Insane Prophet",
+    url: "https://linktr.ee/insaneprophet",
+    isExternal: true,
+  },
 ];
