@@ -10,7 +10,7 @@ export default function HomePage() {
       <section className="flex flex-col gap-4 mb-16 fade-in delay-1">
         <p className="text-(--color-muted)">
           <span className="text-(--color-primary)">Andrej Koller</span> is a
-          software developer from Ekibastuz, Kazakhstan.
+          designer and frontend engineer from Ekibastuz, Kazakhstan.
         </p>
         <p className="text-(--color-muted)">Based in Passau, Germany.</p>
       </section>
@@ -39,7 +39,7 @@ export default function HomePage() {
       <section className="fade-in delay-3">
         <h3 className="mb-8 text-sm font-bold">Featured</h3>
         <div className="mb-24">
-          <p className="mb-4">
+          {/*<p className="mb-4">
             <span className="text-(--color-primary)">Eternal Bravery</span>
             <span className="mx-1 text-(--color-muted)">—</span>
             <span className="text-(--color-muted)">
@@ -52,11 +52,11 @@ export default function HomePage() {
               role="img"
               aria-label="Eternal Bravery Epic Science Fantasy Universe"
             />
-          </div>
+          </div> */}
         </div>
       </section>
 
-      <hr className="border-t border-(--color-border) mb-16" />
+      <hr className="border-t border-(--color-border) mb-24" />
 
       {/* Products & Branding */}
       {portfolioConfig.map((section, sectionIndex) => (
@@ -108,8 +108,8 @@ export default function HomePage() {
       <section className="flex flex-col gap-4 mb-12 fade-in delay-7">
         <h2 className="text-sm font-bold">Ongoing Projects</h2>
         <p className="text-(--color-muted)">
-          Builds ongoing projects spanning music, storytelling, and open source,
-          with an emphasis on tools for designers and developers.
+          Builds ongoing projects spanning theology, philosophy, and open
+          source, with an emphasis on tools for designers and developers.
         </p>
         <ul className="space-y-2">
           {projectLinksConfig.map((project) => (

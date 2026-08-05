@@ -13,27 +13,9 @@ export const projectLinksConfig = [
     isExternal: true,
   },
   {
-    key: "fadinghell",
-    name: "Fading Hell",
-    url: "https://linktr.ee/fadinghell",
-    isExternal: true,
-  },
-  {
-    key: "eternalbravery",
-    name: "Eternal Bravery",
-    url: "https://linktr.ee/eternalbravery",
-    isExternal: true,
-  },
-  {
     key: "qalamis",
     name: "Qalamis",
     url: "https://linktr.ee/qalamis",
-    isExternal: true,
-  },
-  {
-    key: "insaneprophet",
-    name: "Insane Prophet",
-    url: "https://linktr.ee/insaneprophet",
     isExternal: true,
   },
 ];

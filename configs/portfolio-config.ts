@@ -79,20 +79,6 @@ export const portfolioConfig: PortfolioSection[] = [
         images: 4,
         alt: "Omorfia Font Typeface Design",
       },
-      {
-        key: "fadinghell",
-        name: "Fading Hell",
-        description: "Hardcore Punk / Metalcore Band",
-        images: 5,
-        alt: "Fading Hell Hardcore Punk / Metalcore Band",
-      },
-      {
-        key: "insaneprophet",
-        name: "Insane Prophet",
-        description: "Creative Movement",
-        images: 4,
-        alt: "Insane Prophet Creative Movement",
-      },
     ],
   },
 ];
