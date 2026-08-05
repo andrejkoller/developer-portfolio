@@ -39,11 +39,11 @@ export default function HomePage() {
       <section className="fade-in delay-3">
         <h3 className="mb-8 text-sm font-bold">Featured</h3>
         <div className="mb-24">
-          {/*<p className="mb-4">
-            <span className="text-(--color-primary)">Eternal Bravery</span>
+          <p className="mb-4">
+            <span className="text-(--color-primary)">Releases</span>
             <span className="mx-1 text-(--color-muted)">—</span>
             <span className="text-(--color-muted)">
-              Epic Science Fantasy Universe
+              Current and upcoming albums, EPs, and singles
             </span>
           </p>
           <div className="flex flex-col gap-4">
@@ -52,7 +52,7 @@ export default function HomePage() {
               role="img"
               aria-label="Eternal Bravery Epic Science Fantasy Universe"
             />
-          </div> */}
+          </div>
         </div>
       </section>
 
@@ -99,17 +99,18 @@ export default function HomePage() {
       <section className="flex flex-col gap-4 mb-12 fade-in delay-6">
         <h2 className="text-sm font-bold">Skills & Technologies</h2>
         <p className="text-(--color-muted)">
-          I design and build modern, performant web interfaces using HTML, SCSS,
-          TypeScript, and frameworks like Angular, React, Next.js, and Vue.
-          Focused on clean architecture, refined UI systems, and thoughtful
-          digital experiences crafted with TailwindCSS and Figma.
+          Designing and building modern web interfaces with an emphasis on clean
+          architecture, scalable UI systems, and thoughtful user experiences.
+          Primarily working with TypeScript, Angular, React, Next.js, Tailwind
+          CSS, and Figma.
         </p>
       </section>
       <section className="flex flex-col gap-4 mb-12 fade-in delay-7">
         <h2 className="text-sm font-bold">Ongoing Projects</h2>
         <p className="text-(--color-muted)">
-          Builds ongoing projects spanning theology, philosophy, and open
-          source, with an emphasis on tools for designers and developers.
+          Building long-term projects spanning theology, philosophy, design
+          systems, and open source, with a focus on tools and platforms for
+          designers and developers.
         </p>
         <ul className="space-y-2">
           {projectLinksConfig.map((project) => (
