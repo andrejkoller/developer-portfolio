@@ -10,7 +10,7 @@ export default function HomePage() {
       <section className="flex flex-col gap-4 mb-16 fade-in delay-1">
         <p className="text-(--color-muted)">
           <span className="text-(--color-primary)">Andrej Koller</span> is a
-          designer and frontend engineer from Ekibastuz, Kazakhstan.
+          software developer from Ekibastuz, Kazakhstan.
         </p>
         <p className="text-(--color-muted)">Based in Passau, Germany.</p>
       </section>
@@ -48,9 +48,9 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col gap-4">
             <div
-              className="bg-(--color-foreground) h-112.5 w-full rounded-xl"
+              className="bg-(--color-foreground) h-167 w-full rounded-xl"
               role="img"
-              aria-label="Eternal Bravery Epic Science Fantasy Universe"
+              aria-label="Releases of current and upcoming albums, EPs, and singles"
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function HomePage() {
                 {Array.from({ length: project.images ?? 0 }).map((_, i) => (
                   <div
                     key={i}
-                    className="bg-(--color-foreground) h-112.5 w-full rounded-xl"
+                    className="bg-(--color-foreground) h-125 w-full rounded-xl"
                     role="img"
                     aria-label={project.alt}
                   />
