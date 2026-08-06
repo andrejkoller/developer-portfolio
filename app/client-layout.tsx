@@ -14,7 +14,7 @@ export default function ClientLayout({
         <Header />
 
         {/* Main content */}
-        <main className="max-w-2xl w-full min-h-screen mx-auto px-4 grow">
+        <main className="max-w-175 w-full min-h-screen mx-auto px-4 grow">
           {children}
         </main>
 
