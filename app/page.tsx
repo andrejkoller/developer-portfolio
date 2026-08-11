@@ -38,7 +38,7 @@ export default function HomePage() {
       {/* Featured */}
       <section className="fade-in delay-3">
         <h3 className="mb-8 text-sm font-bold">Featured</h3>
-        <div className="mb-24">
+        <div className="mb-12">
           <p className="mb-4">
             <span className="text-(--color-primary)">Releases</span>
             <span className="mx-1 text-(--color-muted)">—</span>
@@ -48,7 +48,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col gap-4">
             <div
-              className="bg-(--color-foreground) h-167 w-full rounded-xl"
+              className="bg-(--color-foreground) h-125 w-full rounded-xl"
               role="img"
               aria-label="Releases of current and upcoming albums, EPs, and singles"
             />
@@ -56,7 +56,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <hr className="border-t border-(--color-border) mb-24" />
+      <hr className="border-t border-(--color-border) mb-12" />
 
       {/* Products & Branding */}
       {portfolioConfig.map((section, sectionIndex) => (
