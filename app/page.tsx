@@ -7,20 +7,20 @@ export default function HomePage() {
   return (
     <>
       {/* Introduction */}
-      <section className="flex flex-col gap-4 mb-16 fade-in delay-1">
-        <p className="text-(--color-muted)">
+      <section className="mb-12 fade-in delay-1">
+        <p className="mb-4 text-(--color-muted)">
           <span className="text-(--color-primary)">Andrej Koller</span> is a
           software developer from Ekibastuz, Kazakhstan.
         </p>
-        <p className="text-(--color-muted)">Based in Passau, Germany.</p>
+        <p className="mb-8 text-(--color-muted)">Based in Passau, Germany.</p>
       </section>
 
       {/* Experience */}
-      <section className="flex flex-col gap-4 mb-16 fade-in delay-2">
+      <section className="mb-12 fade-in delay-2">
         {experienceConfig.map((experience) => (
           <div
             key={experience.key}
-            className="flex justify-between items-baseline border-b border-(--color-border) expertise-item"
+            className="flex items-baseline justify-between border-b border-(--color-border) expertise-item"
           >
             <div className="flex flex-col">
               <h2 className="font-normal">{experience.company}</h2>
@@ -37,7 +37,7 @@ export default function HomePage() {
 
       {/* Featured */}
       <section className="fade-in delay-3">
-        <h3 className="mb-8 text-sm font-bold">Featured</h3>
+        <h3 className="mb-4 text-sm font-bold">Featured</h3>
         <div className="mb-12">
           <p className="mb-4">
             <span className="text-(--color-primary)">Releases</span>
@@ -48,7 +48,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col gap-4">
             <div
-              className="bg-(--color-foreground) h-125 w-full rounded-xl"
+              className="h-125 w-full rounded-xl bg-(--color-foreground)"
               role="img"
               aria-label="Releases of current and upcoming albums, EPs, and singles"
             />
@@ -56,7 +56,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <hr className="border-t border-(--color-border) mb-12" />
+      <hr className="mb-12 border-t border-(--color-border)" />
 
       {/* Products & Branding */}
       {portfolioConfig.map((section, sectionIndex) => (
@@ -84,7 +84,7 @@ export default function HomePage() {
                 {Array.from({ length: project.images ?? 0 }).map((_, i) => (
                   <div
                     key={i}
-                    className="bg-(--color-foreground) h-125 w-full rounded-xl"
+                    className="h-125 w-full rounded-xl bg-(--color-foreground)"
                     role="img"
                     aria-label={project.alt}
                   />
@@ -119,11 +119,6 @@ export default function HomePage() {
                 href={project.url}
                 target={project.isExternal ? "_blank" : "_self"}
                 rel={project.isExternal ? "noopener noreferrer" : undefined}
-                title={
-                  project.isExternal
-                    ? `${project.name} (opens in a new tab)`
-                    : undefined
-                }
               >
                 {project.name}
               </Link>

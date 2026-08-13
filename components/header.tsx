@@ -1,6 +1,9 @@
 export const Header = () => {
   return (
-    <header className="h-(--header-height) max-w-175 w-full mx-auto px-4 flex items-center justify-between fade-in">
+    <header
+      className="flex items-center justify-between h-(--header-height) w-full max-w-175 mx-auto px-4 fade-in"
+      aria-label="Site header"
+    >
       <div className="flex flex-col items-start">
         {/* SVG Logo coming soon */}
       </div>
