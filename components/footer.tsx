@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { footerLinksConfig } from "@/configs/footer-links-config";
-import { ThemeSwitcher } from "./theme/theme-switcher";
 
 export const Footer = () => {
   return (
@@ -11,7 +10,6 @@ export const Footer = () => {
       <div className="flex flex-col items-center justify-center gap-12 h-full w-full max-w-175 mx-auto px-4 min-[425px]:flex-row min-[425px]:gap-0 min-[425px]:justify-between max-[425px]:items-start">
         {/* Left side: Links */}
         <div className="flex space-x-8">
-          <ThemeSwitcher />
           {footerLinksConfig.map((link) => (
             <Link
               key={link.key}
