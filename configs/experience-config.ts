@@ -4,7 +4,6 @@ export interface Experience {
   role: string;
   from: string;
   to: string;
-  period?: string;
 }
 
 export const experienceConfig = [

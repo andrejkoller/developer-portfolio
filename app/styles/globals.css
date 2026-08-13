@@ -11,10 +11,6 @@
   --color-primary: rgb(255, 255, 255);
   --color-hover: rgba(255, 255, 255, 0.65);
 
-  --color-bg-primary: rgba(255, 255, 255, 0.04);
-
-  --color-overlay: rgba(0, 0, 0, 0.5);
-
   --color-border: rgb(51, 51, 51);
 }
 
@@ -25,10 +21,6 @@
   --color-muted: rgb(102, 102, 102);
   --color-primary: rgb(0, 0, 0);
   --color-hover: rgba(0, 0, 0, 0.65);
-
-  --color-bg-primary: rgba(0, 0, 0, 0.04);
-
-  --color-overlay: rgba(255, 255, 255, 0.5);
 
   --color-border: rgb(204, 204, 204);
 }
@@ -43,6 +35,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  line-height: 1.25rem;
   font-family:
     ui-monospace,
     SFMono-Regular,
@@ -53,12 +46,8 @@ body {
     Courier New,
     monospace;
   transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-p {
-  line-height: 1.7;
+    background-color 0.2s ease-out,
+    color 0.2s ease-out;
 }
 
 a {
@@ -68,17 +57,17 @@ a {
 
 a:hover {
   color: var(--color-hover);
-  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.2s ease-out;
 }
 
 svg:hover {
   color: var(--color-hover);
-  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.2s ease-out;
 }
 
 .expertise-item {
-  transition: border-color 0.3s ease;
-  padding-bottom: 1rem;
+  transition: border-color 0.3s ease-out;
+  padding: 1rem 0;
   position: relative;
 }
 

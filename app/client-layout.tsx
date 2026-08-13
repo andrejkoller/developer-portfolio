@@ -10,15 +10,13 @@ export default function ClientLayout({
   return (
     <ThemeProvider>
       <div className="flex flex-col min-h-screen text-sm">
-        {/* Header */}
         <Header />
-
-        {/* Main content */}
-        <main className="max-w-175 w-full min-h-screen mx-auto px-4 grow">
+        <main
+          className="grow w-full max-w-175 min-h-screen mx-auto px-4"
+          aria-label="Main content"
+        >
           {children}
         </main>
-
-        {/* Footer */}
         <Footer />
       </div>
     </ThemeProvider>
