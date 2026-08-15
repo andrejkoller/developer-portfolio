@@ -74,7 +74,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured */}
-      <section className="fade-in delay-3">
+      <section className="fade-in delay-4">
         <h2 className="mb-4 text-sm font-bold">Featured</h2>
         <div className="mb-12">
           <p className="mb-4">
@@ -100,7 +100,7 @@ export default function HomePage() {
       {portfolioConfig.map((section, sectionIndex) => (
         <section
           key={section.key}
-          className={`fade-in delay-${4 + sectionIndex}`}
+          className={`fade-in delay-${5 + sectionIndex}`}
         >
           <h2 className="mb-8 text-sm font-bold">{section.label}</h2>
           {section.projects.map((project) => (
@@ -134,7 +134,7 @@ export default function HomePage() {
       ))}
 
       {/* Skills & ongoing projects */}
-      <section className="flex flex-col gap-4 mb-12 fade-in delay-6">
+      <section className="flex flex-col gap-4 mb-12 fade-in delay-7">
         <h2 className="text-sm font-bold">Skills & Technologies</h2>
         <p className="text-(--color-muted)">
           Designing and building modern web interfaces with an emphasis on clean
@@ -143,7 +143,7 @@ export default function HomePage() {
           CSS, and Figma.
         </p>
       </section>
-      <section className="flex flex-col gap-4 mb-12 fade-in delay-7">
+      <section className="flex flex-col gap-4 mb-12 fade-in delay-8">
         <h2 className="text-sm font-bold">Ongoing Projects</h2>
         <p className="text-(--color-muted)">
           Building long-term projects spanning theology, philosophy, design
