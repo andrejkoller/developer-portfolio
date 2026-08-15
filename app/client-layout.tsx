@@ -10,7 +10,7 @@ export default function ClientLayout({
     <div className="flex flex-col min-h-screen text-sm">
       <Header />
       <main
-        className="grow w-full max-w-175 min-h-screen mx-auto px-4"
+        className="grow w-full max-w-2xl min-h-screen mx-auto px-4"
         aria-label="Main content"
       >
         {children}

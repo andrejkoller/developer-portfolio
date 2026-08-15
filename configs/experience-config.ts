@@ -3,16 +3,27 @@ export interface Experience {
   company: string;
   role: string;
   from: string;
-  to: string;
+  to?: string;
 }
 
 export const experienceConfig = [
+  {
+    key: "qalamis",
+    company: "Qalamis",
+    role: "Founder",
+    from: "2026",
+  },
+  {
+    key: "athanasa",
+    company: "Athanasa",
+    role: "Founder",
+    from: "2025",
+  },
   {
     key: "freelance",
     company: "Freelance",
     role: "Software Developer",
     from: "2025",
-    to: "Present",
   },
   {
     key: "icunet",
