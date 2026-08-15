@@ -4,10 +4,10 @@ import { footerLinksConfig } from "@/configs/footer-links-config";
 export const Footer = () => {
   return (
     <footer
-      className="mt-8 h-(--footer-height) w-full border-t border-(--color-border) fade-in delay-8"
+      className="mt-8 h-(--footer-height) w-full border-t border-(--color-border) fade-in delay-9"
       aria-label="Site footer"
     >
-      <div className="flex flex-col items-center justify-center gap-12 h-full w-full max-w-2xl mx-auto px-4 min-[425px]:flex-row min-[425px]:gap-0 min-[425px]:justify-between max-[425px]:items-start">
+      <div className="flex flex-row items-center justify-between gap-0 h-full w-full max-w-2xl mx-auto px-4">
         {/* Left side: Links */}
         <div className="flex space-x-8">
           {footerLinksConfig.map((link) => (
