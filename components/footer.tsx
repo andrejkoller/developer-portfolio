@@ -7,7 +7,7 @@ export const Footer = () => {
       className="mt-8 h-(--footer-height) w-full border-t border-(--color-border) fade-in delay-9"
       aria-label="Site footer"
     >
-      <div className="flex flex-row items-center justify-between gap-0 h-full w-full max-w-2xl mx-auto px-4">
+      <div className="flex flex-row items-center justify-between gap-0 h-full w-full max-w-175 mx-auto px-4">
         {/* Left side: Links */}
         <div className="flex space-x-8">
           {footerLinksConfig.map((link) => (
