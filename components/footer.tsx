@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { footerLinksConfig } from "@/configs/footer-links-config";
+import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
 export const Footer = () => {
   return (
@@ -7,9 +8,10 @@ export const Footer = () => {
       className="mt-8 h-(--footer-height) w-full border-t border-(--color-border) fade-in delay-9"
       aria-label="Site footer"
     >
-      <div className="flex flex-row items-center justify-between gap-0 h-full w-full max-w-175 mx-auto px-4">
-        {/* Left side: Links */}
-        <div className="flex space-x-8">
+      <div className="layout-container flex flex-row items-center justify-between gap-0 h-full">
+        {/* Left side: Theme switcher + links */}
+        <div className="flex items-center space-x-8">
+          <ThemeSwitcher />
           {footerLinksConfig.map((link) => (
             <Link
               key={link.key}
