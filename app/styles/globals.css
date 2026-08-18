@@ -3,6 +3,7 @@
 :root {
   --header-height: 12.5rem;
   --footer-height: 12.5rem;
+  --layout-max-width: 43.75rem;
 
   --color-background: rgb(0, 0, 0);
   --color-foreground: rgb(255, 255, 255);
@@ -45,9 +46,20 @@ body {
     Liberation Mono,
     Courier New,
     monospace;
+}
+
+/* Enabled after mount to avoid a transition flash on initial theme resolution */
+body.theme-transitions {
   transition:
     background-color 0.2s ease-out,
     color 0.2s ease-out;
+}
+
+.layout-container {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 a {
