@@ -32,13 +32,6 @@ export const portfolioConfig: PortfolioSection[] = [
         alt: "Kleisa Identity & Security",
       },
       {
-        key: "qalamis",
-        name: "Qalamis",
-        description: "Digital Library Platform",
-        images: 5,
-        alt: "Qalamis Digital Library Platform",
-      },
-      {
         key: "omelia-ui",
         name: "Omelia UI",
         description: "React Component Library",
