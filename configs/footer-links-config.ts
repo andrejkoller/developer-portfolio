@@ -7,17 +7,7 @@ export interface FooterLink {
 export const footerLinksConfig = [
   {
     key: "x",
-    name: "X",
+    name: "𝕏",
     url: "https://x.com/andrejkoller",
-  },
-  {
-    key: "github",
-    name: "GitHub",
-    url: "https://github.com/andrejkoller",
-  },
-  {
-    key: "linkedin",
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/andrejkoller",
   },
 ];
