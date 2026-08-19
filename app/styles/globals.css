@@ -149,3 +149,8 @@ svg:hover {
     transform: translateY(0);
   }
 }
+
+::selection {
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+}
