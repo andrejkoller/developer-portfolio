@@ -3,9 +3,9 @@ import "./styles/globals.css";
 import ClientLayout from "./client-layout";
 
 export const metadata: Metadata = {
-  title: "Software Engineer - Andrej Koller",
+  title: "Software Developer - Andrej Koller",
   description:
-    "Andrej Koller is a software engineer from Ekibastuz, Kazakhstan. Based in Passau, Germany.",
+    "Andrej Koller is a software developer from Ekibastuz, Kazakhstan. Based in Passau, Germany.",
 };
 
 export default function RootLayout({
