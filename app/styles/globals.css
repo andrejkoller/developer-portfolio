@@ -142,14 +142,6 @@ svg:hover {
   animation-delay: 0.7s;
 }
 
-.delay-8 {
-  animation-delay: 0.8s;
-}
-
-.delay-9 {
-  animation-delay: 0.9s;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;

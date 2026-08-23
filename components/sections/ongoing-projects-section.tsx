@@ -2,7 +2,7 @@ import Link from "next/link";
 import { projectLinksConfig } from "@/configs/project.config";
 
 export const OngoingProjectsSection = () => (
-  <section className="flex flex-col gap-4 mb-12 fade-in delay-8">
+  <section className="flex flex-col gap-4 mb-12 fade-in delay-6">
     <h2 className="text-sm font-bold">Ongoing Projects</h2>
     <p className="text-(--color-muted)">
       Building long-term projects in design systems, branding, and open source,

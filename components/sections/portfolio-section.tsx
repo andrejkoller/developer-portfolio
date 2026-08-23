@@ -4,8 +4,8 @@ import {
   portfolioImageRadius,
 } from "@/constants/portfolio.constants";
 
-// Continues the page's 0.1s-per-section fade-in stagger (delay-5 onward) without capping at the fixed .delay-9 CSS class
-const BASE_DELAY_SECONDS = 0.5;
+// Continues the page's 0.1s-per-section fade-in stagger (delay-4 onward) without capping at the fixed .delay-7 CSS class
+const BASE_DELAY_SECONDS = 0.4;
 const DELAY_STEP_SECONDS = 0.1;
 
 export const PortfolioSection = () => (
