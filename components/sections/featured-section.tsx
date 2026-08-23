@@ -1,5 +1,5 @@
 export const FeaturedSection = () => (
-  <section className="fade-in delay-4">
+  <section className="fade-in delay-3">
     <h2 className="mb-4 text-sm font-bold">Featured</h2>
     <div className="mb-12">
       <p className="mb-4">

@@ -5,7 +5,7 @@ import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 export const Footer = () => {
   return (
     <footer
-      className="mt-8 h-(--footer-height) w-full border-t border-(--color-border) fade-in delay-9"
+      className="mt-8 h-(--footer-height) w-full border-t border-(--color-border) fade-in delay-7"
       aria-label="Site footer"
     >
       <div className="layout-container flex flex-row items-center justify-between gap-0 h-full">
