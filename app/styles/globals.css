@@ -3,7 +3,7 @@
 :root {
   --header-height: 12.5rem;
   --footer-height: 12.5rem;
-  --layout-max-width: 43.75rem;
+  --layout-max-width: 42rem;
 
   --color-background: rgb(0, 0, 0);
   --color-foreground: rgb(255, 255, 255);
@@ -51,8 +51,8 @@ body {
 /* Enabled after mount to avoid a transition flash on initial theme resolution */
 body.theme-transitions {
   transition:
-    background-color 0.2s ease-out,
-    color 0.2s ease-out;
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .layout-container {
@@ -69,16 +69,16 @@ a {
 
 a:hover {
   color: var(--color-hover);
-  transition: color 0.2s ease-out;
+  transition: color 0.2s ease;
 }
 
 svg:hover {
   color: var(--color-hover);
-  transition: color 0.2s ease-out;
+  transition: color 0.2s ease;
 }
 
 .expertise-item {
-  transition: border-color 0.3s ease-out;
+  transition: border-color 0.3s ease;
   padding: 1rem 0;
   position: relative;
 }
@@ -91,11 +91,22 @@ svg:hover {
   width: 0;
   height: 1px;
   background-color: var(--color-foreground);
-  transition: width 0.3s ease-out;
+  transition: width 0.3s ease;
 }
 
 .expertise-item:hover::after {
   width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .expertise-item:focus-within::after,
+  .expertise-item:hover::after {
+    width: 100%;
+  }
+
+  .expertise-item:hover {
+    border-color: var(--color-foreground);
+  }
 }
 
 .fade-in {

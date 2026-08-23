@@ -1,4 +1,8 @@
-import { portfolioConfig } from "@/configs/portfolio-config";
+import { portfolioConfig } from "@/configs/portfolio.config";
+import {
+  portfolioImageHeights,
+  portfolioImageRadius,
+} from "@/constants/portfolio.constants";
 
 // Continues the page's 0.1s-per-section fade-in stagger (delay-5 onward) without capping at the fixed .delay-9 CSS class
 const BASE_DELAY_SECONDS = 0.5;
@@ -25,16 +29,17 @@ export const PortfolioSection = () => (
               </span>
             </p>
             <div
-              className={
-                project.images && project.images > 1
-                  ? "flex flex-col gap-4"
-                  : ""
-              }
+              className={project.images.length > 1 ? "flex flex-col gap-4" : ""}
             >
-              {Array.from({ length: project.images ?? 0 }).map((_, i) => (
+              {project.images.map((image, imageIndex) => (
                 <div
-                  key={i}
-                  className="h-125 w-full rounded-xl bg-(--color-foreground)"
+                  key={`${project.key}-${imageIndex}`}
+                  className="w-full bg-(--color-foreground)"
+                  style={{
+                    height: portfolioImageHeights[image.height ?? "regular"],
+                    borderRadius: portfolioImageRadius[image.radius ?? "md"],
+                  }}
+                  data-position={image.position ?? "center"}
                   role="img"
                   aria-label={project.alt}
                 />

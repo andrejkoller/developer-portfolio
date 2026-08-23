@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { projectLinksConfig } from "@/configs/project-links-config";
+import { projectLinksConfig } from "@/configs/project.config";
 
 export const OngoingProjectsSection = () => (
   <section className="flex flex-col gap-4 mb-12 fade-in delay-8">
