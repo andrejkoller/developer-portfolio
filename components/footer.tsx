@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footerLinksConfig } from "@/configs/footer-links-config";
+import { footerLinksConfig } from "@/configs/footer.config";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
 export const Footer = () => {

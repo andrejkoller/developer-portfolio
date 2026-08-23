@@ -1,4 +1,4 @@
-import { experienceConfig } from "@/configs/experience-config";
+import { experienceConfig } from "@/configs/experience.config";
 import { InfinityIcon } from "@/components/icons/infinity-icon";
 
 export const ExperienceSection = () => (
