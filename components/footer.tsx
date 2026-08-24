@@ -18,6 +18,7 @@ export const Footer = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
+              className="text-(--color-muted) hover:text-(--color-primary) transition-colors duration-200"
             >
               {link.name}
             </Link>
