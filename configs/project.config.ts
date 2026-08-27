@@ -9,7 +9,7 @@ export const projectLinksConfig = [
   {
     key: "athanasa",
     name: "Athanasa",
-    url: "https://athanasa.com",
+    url: "https://linktr.ee/athanasa",
     isExternal: true,
   },
 ];
