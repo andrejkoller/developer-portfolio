@@ -68,6 +68,45 @@ export const portfolioConfig: PortfolioSection[] = [
       },
 
       {
+        key: "plasios",
+        name: "Plasios",
+        description: "Visual Website Builder",
+        alt: "Plasios Visual Website Builder",
+        images: [
+          {
+            height: "tall",
+            radius: "md",
+            position: "center",
+          },
+          {
+            height: "regular",
+            radius: "md",
+            position: "left",
+          },
+          {
+            height: "compact",
+            radius: "md",
+            position: "center",
+          },
+          {
+            height: "regular",
+            radius: "md",
+            position: "right",
+          },
+          {
+            height: "tall",
+            radius: "md",
+            position: "center",
+          },
+          {
+            height: "regular",
+            radius: "md",
+            position: "left",
+          },
+        ],
+      },
+
+      {
         key: "kleisa",
         name: "Kleisa",
         description: "Identity & Security",
