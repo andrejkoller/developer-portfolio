@@ -13,6 +13,12 @@ export const projectLinksConfig = [
     isExternal: true,
   },
   {
+    key: "akirune",
+    name: "Akirune",
+    url: "https://linktr.ee/akirune",
+    isExternal: true,
+  },
+  {
     key: "fadinghell",
     name: "Fading Hell",
     url: "https://linktr.ee/fadinghell",
