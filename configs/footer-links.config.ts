@@ -7,7 +7,7 @@ export interface FooterLink {
 export const footerLinksConfig = [
   {
     key: "x",
-    name: "X (Twitter)",
+    name: "𝕏",
     url: "https://x.com/andrejkoller",
   },
 ];
