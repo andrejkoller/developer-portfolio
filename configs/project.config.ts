@@ -30,4 +30,10 @@ export const projectLinksConfig = [
     url: "https://linktr.ee/akirune",
     isExternal: true,
   },
+  {
+    key: "aurelet",
+    name: "Aurelet",
+    url: "https://linktr.ee/aurelet",
+    isExternal: true,
+  },
 ];
