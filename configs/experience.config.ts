@@ -8,6 +8,12 @@ export interface Experience {
 
 export const experienceConfig = [
   {
+    key: "aurelet",
+    company: "Aurelet",
+    role: "Founder",
+    from: "2026",
+  },
+  {
     key: "akirune",
     company: "Akirune",
     role: "Founder",
