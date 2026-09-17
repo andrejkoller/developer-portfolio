@@ -13,8 +13,8 @@ export const OngoingProjectsSection = () => (
         <li key={project.key}>
           <Link
             href={project.url}
-            target={project.isExternal ? "_blank" : "_self"}
-            rel={project.isExternal ? "noopener noreferrer" : undefined}
+            target={project.hasTargetBlank ? "_blank" : "_self"}
+            rel={project.hasRelNoopener ? "noopener noreferrer" : undefined}
             className="text-(--color-primary) hover:text-(--color-hover) transition-colors duration-200"
           >
             {project.name}

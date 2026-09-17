@@ -16,11 +16,11 @@ export const Footer = () => {
             <Link
               key={link.key}
               href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={link.hasTargetBlank ? "_blank" : "_self"}
+              rel={link.hasRelNoopener ? "noopener noreferrer" : undefined}
               className="text-(--color-muted) hover:text-(--color-primary) transition-colors duration-200"
             >
-              {link.name}
+              {link.label}
             </Link>
           ))}
         </div>
