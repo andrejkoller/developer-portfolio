@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { footerLinksConfig } from "@/configs/footer-links.config";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
 export const Footer = () => {
@@ -12,17 +10,6 @@ export const Footer = () => {
         {/* Left side: Theme switcher + links */}
         <div className="flex items-center space-x-8">
           <ThemeSwitcher />
-          {footerLinksConfig.map((link) => (
-            <Link
-              key={link.key}
-              href={link.url}
-              target={link.hasTargetBlank ? "_blank" : "_self"}
-              rel={link.hasRelNoopener ? "noopener noreferrer" : undefined}
-              className="text-(--color-muted) hover:text-(--color-primary) transition-colors duration-200"
-            >
-              {link.label}
-            </Link>
-          ))}
         </div>
 
         {/* Right side: Copyright */}
