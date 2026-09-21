@@ -8,23 +8,9 @@ export interface ProjectLink {
 
 export const projectLinksConfig = [
   {
-    key: "fadinghell",
-    name: "Fading Hell",
-    url: "https://linktr.ee/fadinghell",
-    hasTargetBlank: true,
-    hasRelNoopener: true,
-  },
-  {
     key: "athanasa",
     name: "Athanasa",
     url: "https://linktr.ee/athanasa",
-    hasTargetBlank: true,
-    hasRelNoopener: true,
-  },
-  {
-    key: "insaneprophet",
-    name: "Insane Prophet",
-    url: "https://linktr.ee/insaneprophet",
     hasTargetBlank: true,
     hasRelNoopener: true,
   },
