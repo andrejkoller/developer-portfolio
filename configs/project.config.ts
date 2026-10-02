@@ -21,11 +21,4 @@ export const projectLinksConfig = [
     hasTargetBlank: true,
     hasRelNoopener: true,
   },
-  {
-    key: "aurelet",
-    name: "Aurelet",
-    url: "https://linktr.ee/aurelet",
-    hasTargetBlank: true,
-    hasRelNoopener: true,
-  },
 ];
