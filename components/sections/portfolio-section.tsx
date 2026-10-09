@@ -37,7 +37,7 @@ export const PortfolioSection = () => (
                   className="w-full bg-(--color-foreground)"
                   style={{
                     height: portfolioImageHeights[image.height ?? "regular"],
-                    borderRadius: portfolioImageRadius[image.radius ?? "md"],
+                    borderRadius: portfolioImageRadius[image.radius ?? "2xl"],
                   }}
                   data-position={image.position ?? "center"}
                   role="img"
