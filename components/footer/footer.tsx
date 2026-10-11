@@ -1,11 +1,6 @@
 import { ThemeSwitcher } from "@/components/theme";
 import { footerConfig } from "@/configs/footer.config";
-import { TwitterIcon } from "@/components/icons/twitter-icon";
 import Link from "next/link";
-
-const icons = {
-  twitter: <TwitterIcon />,
-} as const;
 
 export const Footer = () => {
   return (
