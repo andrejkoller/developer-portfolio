@@ -31,37 +31,37 @@ export const portfolioConfig: PortfolioSection[] = [
         images: [
           {
             height: "tall",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "right",
           },
           {
             height: "tall",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
         ],
@@ -75,32 +75,32 @@ export const portfolioConfig: PortfolioSection[] = [
         images: [
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
           {
             height: "tall",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "right",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "tall",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
         ],
@@ -114,27 +114,27 @@ export const portfolioConfig: PortfolioSection[] = [
         images: [
           {
             height: "tall",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "right",
           },
           {
             height: "tall",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
         ],
@@ -148,22 +148,22 @@ export const portfolioConfig: PortfolioSection[] = [
         images: [
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "right",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
         ],
@@ -177,17 +177,17 @@ export const portfolioConfig: PortfolioSection[] = [
         images: [
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "right",
           },
         ],
@@ -201,17 +201,17 @@ export const portfolioConfig: PortfolioSection[] = [
         images: [
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "right",
           },
         ],
@@ -231,22 +231,22 @@ export const portfolioConfig: PortfolioSection[] = [
         images: [
           {
             height: "tall",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "regular",
-            radius: "2xl",
+            radius: "xl",
             position: "left",
           },
           {
             height: "compact",
-            radius: "2xl",
+            radius: "xl",
             position: "center",
           },
           {
             height: "tall",
-            radius: "2xl",
+            radius: "xl",
             position: "right",
           },
         ],
