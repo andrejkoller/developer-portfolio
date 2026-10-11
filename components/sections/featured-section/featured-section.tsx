@@ -11,7 +11,7 @@ export const FeaturedSection = () => (
       </p>
       <div className="flex flex-col gap-4">
         <div
-          className="h-130 w-full rounded-2xl bg-(--color-foreground)"
+          className="h-130 w-full rounded-xl bg-(--color-foreground)"
           role="img"
           aria-label="A world of blood, beauty, and predatory grace."
         />
