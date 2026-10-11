@@ -6,7 +6,7 @@ export interface ProjectLink {
   hasRelNoopener?: boolean;
 }
 
-export const projectLinksConfig = [
+export const projectLinksConfig: ProjectLink[] = [
   {
     key: "athanasa",
     name: "Athanasa",
