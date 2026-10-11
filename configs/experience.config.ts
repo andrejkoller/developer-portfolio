@@ -6,7 +6,7 @@ export interface Experience {
   to?: string;
 }
 
-export const experienceConfig = [
+export const experienceConfig: Experience[] = [
   {
     key: "akirune",
     company: "Akirune",
