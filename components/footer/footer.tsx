@@ -19,7 +19,7 @@ export const Footer = () => {
               rel={link.hasRelNoopener ? "noopener" : undefined}
               aria-label={link.title}
               title={link.title}
-              className="text-xs uppercase font-(--font-geist-mono) underline decoration-dotted"
+              className="text-xs uppercase font-(family-name:--font-geist-mono) font-medium underline decoration-dotted"
             >
               {link.title}
             </Link>

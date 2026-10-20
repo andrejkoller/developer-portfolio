@@ -22,7 +22,7 @@ export const ThemeSwitcher = () => {
   return (
     <button
       onClick={switchTheme}
-      className="cursor-pointer"
+      className="cursor-pointer size-8 flex items-center justify-center rounded-lg hover:bg-(--accent)"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode (Shift + D)`}
     >
       <ThemeIcon />
