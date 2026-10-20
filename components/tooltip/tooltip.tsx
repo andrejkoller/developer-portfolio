@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useId } from "react";
+import * as React from "react";
 
 interface TooltipProps {
   content: string;
@@ -15,11 +15,22 @@ export const Tooltip = ({
   side = "top",
   delay = 200,
 }: TooltipProps) => {
-  const [open, setOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const id = useId();
+  const [open, setOpen] = React.useState(false);
+  const [canHover, setCanHover] = React.useState(false);
+  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const id = React.useId();
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    setCanHover(mq.matches);
+
+    const handler = (e: MediaQueryListEvent) => setCanHover(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
   const show = () => {
+    if (!canHover) return;
     timeoutRef.current = setTimeout(() => setOpen(true), delay);
   };
 
