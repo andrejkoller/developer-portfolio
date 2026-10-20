@@ -3,19 +3,29 @@
 :root {
   --layout-max-width: 32rem;
 
-  --background: #ffffff;
-  --foreground: #000000;
+  /* Core */
+  --background: #fafafa;
+  --foreground: #111111;
 
-  --muted: #d4d4d4;
-  --accent: #f3f3f3;
+  /* Supporting */
+  --muted: #a1a1a1;
+  --accent: #f0f0f0;
+
+  /* Optional extras */
+  --border: #e5e5e5;
 }
 
 [data-theme="dark"] {
-  --background: #000000;
-  --foreground: #ffffff;
+  /* Core */
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
 
+  /* Supporting */
   --muted: #737373;
-  --accent: #1c1c1c;
+  --accent: #171717;
+
+  /* Optional extras */
+  --border: #262626;
 }
 
 * {
