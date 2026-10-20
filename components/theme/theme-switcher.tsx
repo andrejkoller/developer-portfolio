@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useTheme } from "./use-theme";
-import { Sun, Moon } from "lucide-react";
+import { ThemeIcon } from "./theme-icon";
 
 export const ThemeSwitcher = () => {
   const { theme, switchTheme, mounted } = useTheme();
@@ -22,10 +22,10 @@ export const ThemeSwitcher = () => {
   return (
     <button
       onClick={switchTheme}
-      className="cursor-pointer text-(--color-muted) hover:text-(--color-primary) transition-colors duration-200"
+      className="cursor-pointer"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode (Shift + D)`}
     >
-      {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+      <ThemeIcon />
     </button>
   );
 };

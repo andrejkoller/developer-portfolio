@@ -1,33 +1,33 @@
-import { ThemeSwitcher } from "@/components/theme";
 import { footerConfig } from "@/configs/footer.config";
 import Link from "next/link";
+import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 
 export const Footer = () => {
   return (
     <footer
-      className="mt-8 h-(--footer-height) w-full border-t border-(--color-border) fade-in delay-7"
-      aria-label="Site footer"
+      className="fixed bottom-0 z-70 w-full bg-(--background)"
+      aria-label="Footer"
     >
-      <div className="layout-container flex flex-row items-center justify-between gap-0 h-full">
-        <div className="flex items-center space-x-8">
-          <ThemeSwitcher />
+      <div className="layout-container flex items-center justify-between py-4">
+        {/* Links */}
+        <div className="flex gap-6">
           {footerConfig.map((link) => (
             <Link
               key={link.key}
               href={link.url}
               target={link.hasTargetBlank ? "_blank" : undefined}
               rel={link.hasRelNoopener ? "noopener" : undefined}
-              className="text-(--color-muted) hover:text-(--color-text) inline-flex items-center"
               aria-label={link.title}
+              title={link.title}
+              className="text-xs uppercase font-(--font-geist-mono) underline decoration-dotted"
             >
               {link.title}
             </Link>
           ))}
         </div>
 
-        <p className="text-(--color-muted)">
-          &copy; {new Date().getFullYear()}
-        </p>
+        {/* Theme Switcher */}
+        <ThemeSwitcher />
       </div>
     </footer>
   );

@@ -1,29 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --header-height: 12.5rem;
-  --footer-height: 12.5rem;
-  --layout-max-width: 43.75rem;
+  --layout-max-width: 32rem;
 
-  --color-background: #000000;
-  --color-foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #000000;
 
-  --color-muted: #666666;
-  --color-primary: #ffffff;
-  --color-hover: #ffffffa6;
-
-  --color-border: #333333;
+  --muted: #d4d4d4;
+  --accent: #f3f3f3;
 }
 
-[data-theme="light"] {
-  --color-background: #ffffff;
-  --color-foreground: #000000;
+[data-theme="dark"] {
+  --background: #000000;
+  --foreground: #ffffff;
 
-  --color-muted: #666666;
-  --color-primary: #000000;
-  --color-hover: #000000a6;
-
-  --color-border: #cccccc;
+  --muted: #737373;
+  --accent: #1c1c1c;
 }
 
 * {
@@ -31,114 +23,23 @@
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-primary);
+  background: var(--background);
+  color: var(--foreground);
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  line-height: 1.25rem;
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    Liberation Mono,
-    Courier New,
-    monospace;
-}
-
-/* Enabled after mount to avoid a transition flash on initial theme resolution */
-body.theme-transitions {
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+  font-size: 0.875rem;
+  font-family: var(--font-geist-sans), sans-serif;
 }
 
 .layout-container {
   width: 100%;
   max-width: var(--layout-max-width);
   margin-inline: auto;
-  padding-inline: 1rem;
-}
-
-.expertise-item {
-  transition: border-color 0.3s ease;
-  padding: 1rem 0;
-  position: relative;
-}
-
-.expertise-item::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: var(--color-foreground);
-  transition: width 0.3s ease;
-}
-
-.expertise-item:hover::after {
-  width: 100%;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .expertise-item:focus-within::after,
-  .expertise-item:hover::after {
-    width: 100%;
-  }
-
-  .expertise-item:hover {
-    border-color: var(--color-foreground);
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-.delay-1 {
-  animation-delay: 0.1s;
-}
-
-.delay-2 {
-  animation-delay: 0.2s;
-}
-
-.delay-3 {
-  animation-delay: 0.3s;
-}
-
-.delay-4 {
-  animation-delay: 0.4s;
-}
-
-.delay-5 {
-  animation-delay: 0.5s;
-}
-
-.delay-6 {
-  animation-delay: 0.6s;
-}
-
-.delay-7 {
-  animation-delay: 0.7s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  padding-inline: 1.5rem;
 }
 
 ::selection {
-  background-color: var(--color-foreground);
-  color: var(--color-background);
+  background-color: var(--foreground);
+  color: var(--background);
 }

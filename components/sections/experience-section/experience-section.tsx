@@ -1,27 +1,20 @@
 import { experienceConfig } from "@/configs/experience.config";
-import { Infinity } from "lucide-react";
 
 export const ExperienceSection = () => (
-  <section className="mb-12 fade-in delay-2">
-    {experienceConfig.map((experience) => (
-      <div
-        key={experience.key}
-        className="flex items-baseline justify-between border-b border-(--color-border) expertise-item"
-      >
-        <div className="flex flex-col">
-          <h3 className="font-normal">{experience.company}</h3>
-          <p className="text-(--color-muted)">{experience.role}</p>
+  <section className="mb-16">
+    <h2 className="mb-4 text-sm font-medium">Past Experience</h2>
+
+    <div className="flex flex-col">
+      {experienceConfig.map((experience) => (
+        <div
+          key={experience.key}
+          className="flex items-center justify-between py-0.5"
+        >
+          <span className="text-(--foreground)">{experience.company}</span>
+
+          <span className="text-(--muted) tabular-nums">{experience.year}</span>
         </div>
-        <p className="flex items-center whitespace-nowrap text-(--color-muted)">
-          <span>{experience.from}</span>
-          <span>-</span>
-          {experience.to ? (
-            <span>{experience.to}</span>
-          ) : (
-            <Infinity size={16} className="text-(--color-muted)" />
-          )}
-        </p>
-      </div>
-    ))}
+      ))}
+    </div>
   </section>
 );
