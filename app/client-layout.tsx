@@ -9,12 +9,9 @@ export default function ClientLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ThemeProvider>
-      <div className="flex flex-col min-h-screen text-sm">
+      <div className="flex flex-col">
         <Header />
-        <main
-          className="layout-container grow min-h-screen"
-          aria-label="Main content"
-        >
+        <main className="layout-container mb-24" aria-label="Main content">
           {children}
         </main>
         <Footer />

@@ -1,35 +1,23 @@
 export interface Experience {
   key: string;
   company: string;
-  role: string;
-  from: string;
-  to?: string;
+  year: string;
 }
 
 export const experienceConfig: Experience[] = [
   {
-    key: "akirune",
-    company: "Akirune",
-    role: "Founder",
-    from: "2026",
+    key: "fermola",
+    company: "Fermola",
+    year: "2026",
   },
   {
     key: "athanasa",
     company: "Athanasa",
-    role: "Founder",
-    from: "2025",
-  },
-  {
-    key: "self-employed",
-    company: "Self-Employed",
-    role: "Software Developer",
-    from: "2025",
+    year: "2025",
   },
   {
     key: "icunet",
     company: "ICUnet",
-    role: "Software Developer, Training",
-    from: "2022",
-    to: "2025",
+    year: "2022 - 2025",
   },
 ];

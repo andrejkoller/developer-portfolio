@@ -1,9 +1,35 @@
-export const IntroductionSection = () => (
-  <section className="mb-12 fade-in delay-1">
-    <p className="mb-4 text-(--color-muted)">
-      <span className="text-(--color-primary)">Andrej Koller</span> is a
-      designer and frontend engineer from Ekibastuz, Kazakhstan.
-    </p>
-    <p className="mb-8 text-(--color-muted)">Based in Passau, Germany.</p>
-  </section>
-);
+import Link from "next/link";
+
+const START_YEAR = 2024;
+
+const getExperienceYears = () => {
+  const currentYear = new Date().getFullYear();
+  return Math.max(currentYear - START_YEAR, 1);
+};
+
+export const IntroductionSection = () => {
+  const years = getExperienceYears();
+
+  return (
+    <section className="mb-16">
+      <p className="mb-4 leading-relaxed">
+        I’m Andrej Koller - a Designer and Frontend Engineer with {years}+ years
+        of experience, known for pixel-perfect execution and an obsessive
+        attention to detail.
+      </p>
+      <p className="mb-4 leading-relaxed">
+        Passionate about exploring new technologies and turning ideas into
+        reality through polished, thoughtfully crafted projects.
+      </p>
+      <p className="mb-4 leading-relaxed">
+        Get in touch:{" "}
+        <Link
+          href="mailto:contact@andrejkoller.com"
+          className="underline decoration-dotted"
+        >
+          contact@andrejkoller.com
+        </Link>
+      </p>
+    </section>
+  );
+};

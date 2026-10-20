@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
 import ClientLayout from "./client-layout";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Designer & Frontend Engineer - Andrej Koller",
+  title: "Developer Portfolio - Andrej Koller",
   description:
     "Andrej Koller is a designer and frontend engineer from Ekibastuz, Kazakhstan. Based in Passau, Germany.",
 };
@@ -15,7 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className="antialiased">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
