@@ -16,7 +16,7 @@ export const PortfolioSection = () => {
             className="aspect-square overflow-hidden"
             aria-label={project.alt ?? project.title}
           >
-            <div className="h-full w-full object-cover bg-(--accent) rounded-[20px]"></div>
+            <div className="h-full w-full object-cover bg-(--accent) rounded-2xl"></div>
           </Link>
         ))}
       </div>
