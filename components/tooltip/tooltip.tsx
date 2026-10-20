@@ -5,7 +5,7 @@ import * as React from "react";
 interface TooltipProps {
   content: string;
   children: React.ReactNode;
-  side?: "top" | "bottom";
+  side?: "top" | "bottom" | "left" | "right";
   delay?: number;
 }
 
@@ -39,41 +39,50 @@ export const Tooltip = ({
     setOpen(false);
   };
 
+  const positionClasses = {
+    top: "bottom-full left-1/2 -translate-x-1/2 mb-2",
+    bottom: "top-full left-1/2 -translate-x-1/2 mt-2",
+    left: "right-full top-1/2 -translate-y-1/2 mr-2",
+    right: "left-full top-1/2 -translate-y-1/2 ml-2",
+  };
+
+  const arrowClasses = {
+    top: "top-full left-1/2 -translate-x-1/2 border-t-(--foreground)",
+    bottom: "bottom-full left-1/2 -translate-x-1/2 border-b-(--foreground)",
+    left: "left-full top-1/2 -translate-y-1/2 border-l-(--foreground)",
+    right: "right-full top-1/2 -translate-y-1/2 border-r-(--foreground)",
+  };
+
   return (
     <span
       className="relative inline-flex"
       onMouseEnter={show}
       onMouseLeave={hide}
-      onFocus={show}
+      onFocus={canHover ? show : undefined}
       onBlur={hide}
     >
       <span aria-describedby={open ? id : undefined} className="inline-flex">
         {children}
       </span>
 
-      {open && (
+      {open && canHover && (
         <span
           id={id}
           role="tooltip"
           className={`
-      absolute left-1/2 z-50 -translate-x-1/2
-      whitespace-nowrap rounded-md px-2 py-1 text-xs
-      font-(--font-geist-mono)
-      bg-(--foreground) text-(--background)
-      ${side === "top" ? "bottom-full mb-2" : "top-full mt-2"}
-    `}
+            absolute z-50 whitespace-nowrap rounded-md px-2 py-1 text-xs
+            font-(--font-geist-mono)
+            bg-(--foreground) text-(--background)
+            pointer-events-none
+            ${positionClasses[side]}
+          `}
         >
           {content}
           <span
             className={`
-        absolute left-1/2 -translate-x-1/2
-        border-4 border-transparent
-        ${
-          side === "top"
-            ? "top-full border-t-(--foreground)"
-            : "bottom-full border-b-(--foreground)"
-        }
-      `}
+              absolute border-4 border-transparent
+              ${arrowClasses[side]}
+            `}
           />
         </span>
       )}

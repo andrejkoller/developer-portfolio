@@ -2,10 +2,12 @@ import { IntroductionSection } from "@/components/sections/introduction-section"
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { PortfolioSection } from "@/components/sections/portfolio-section";
 import { BuildingSection } from "@/components/sections/building-section";
+import { LogoSection } from "@/components/sections/logo-section";
 
 export default function HomePage() {
   return (
     <>
+      <LogoSection />
       <IntroductionSection />
       <ExperienceSection />
       <PortfolioSection />
