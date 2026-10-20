@@ -1,4 +1,4 @@
-import { footerConfig } from "@/configs/footer.config";
+import { headerConfig } from "@/configs/header.config";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 import { Tooltip } from "@/components/tooltip";
@@ -6,13 +6,13 @@ import { Tooltip } from "@/components/tooltip";
 export const Header = () => {
   return (
     <header
-      className="fixed top-0 z-70 w-full bg-(--background)"
+      className="sticky top-0 z-70 w-full bg-(--background)"
       aria-label="Header"
     >
       <div className="layout-container flex items-center justify-between py-4">
         {/* Links */}
         <div className="flex gap-6">
-          {footerConfig.map((link) => (
+          {headerConfig.map((link) => (
             <Link
               key={link.key}
               href={link.url}

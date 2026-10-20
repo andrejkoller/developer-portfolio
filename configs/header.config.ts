@@ -1,4 +1,4 @@
-export interface FooterLink {
+export interface HeaderLink {
   key: string;
   title?: string;
   url: string;
@@ -6,7 +6,7 @@ export interface FooterLink {
   hasRelNoopener?: boolean;
 }
 
-export const footerConfig: FooterLink[] = [
+export const headerConfig: HeaderLink[] = [
   {
     key: "github",
     title: "GitHub",

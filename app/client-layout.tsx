@@ -10,7 +10,7 @@ export default function ClientLayout({
     <ThemeProvider>
       <div className="flex flex-col">
         <Header />
-        <main className="layout-container mb-16" aria-label="Main content">
+        <main className="layout-container" aria-label="Main content">
           {children}
         </main>
       </div>
