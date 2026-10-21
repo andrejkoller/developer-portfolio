@@ -36,15 +36,50 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  useEffect(() => {
-    document.body.classList.add("theme-transitions");
-  }, []);
+  const switchTheme = useCallback(
+    (event?: React.MouseEvent) => {
+      const newTheme: Theme = theme === "light" ? "dark" : "light";
 
-  const switchTheme = useCallback(() => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    localStorage.setItem("theme", newTheme);
-    window.dispatchEvent(new StorageEvent("storage"));
-  }, [theme]);
+      let x: number;
+      let y: number;
+
+      if (event) {
+        x = event.clientX;
+        y = event.clientY;
+      } else {
+        const toggle = document.querySelector<HTMLElement>(
+          "[data-theme-toggle]",
+        );
+        if (toggle) {
+          const rect = toggle.getBoundingClientRect();
+          x = rect.left + rect.width / 2;
+          y = rect.top + rect.height / 2;
+        } else {
+          x = window.innerWidth - 32;
+          y = 32;
+        }
+      }
+
+      document.documentElement.style.setProperty("--theme-x", `${x}px`);
+      document.documentElement.style.setProperty("--theme-y", `${y}px`);
+
+      const apply = () => {
+        document.documentElement.dataset.theme = newTheme;
+        localStorage.setItem("theme", newTheme);
+        window.dispatchEvent(new StorageEvent("storage"));
+      };
+
+      if (
+        typeof document !== "undefined" &&
+        "startViewTransition" in document
+      ) {
+        document.startViewTransition(apply);
+      } else {
+        apply();
+      }
+    },
+    [theme],
+  );
 
   return (
     <ThemeContext.Provider value={{ theme, switchTheme, mounted }}>
