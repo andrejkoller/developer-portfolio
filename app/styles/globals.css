@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --header-height: 4rem;
   --layout-max-width: 32rem;
 
   /* Core */
