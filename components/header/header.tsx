@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 import { Tooltip } from "@/components/tooltip";
+import { cn } from "@/lib/merge-classes";
 
 export const Header = () => {
   return (
@@ -28,13 +29,13 @@ const HeaderWithSearchParams = () => {
 const HeaderContent = ({ isProjectPage }: { isProjectPage: boolean }) => {
   return (
     <header
-      className={`
-        fixed z-70 w-full bg-(--background)
+      className={cn(`
+        fixed z-70 flex items-center w-full h-(--header-height) bg-(--background)
         ${isProjectPage ? "bottom-0" : "top-0"}
-      `}
+      `)}
       aria-label="Header"
     >
-      <div className="layout-container flex items-center justify-between py-4">
+      <div className="layout-container flex items-center justify-between h-full">
         {/* Links */}
         <div className="flex gap-6">
           {headerConfig.map((link) => (
