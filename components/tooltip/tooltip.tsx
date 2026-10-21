@@ -53,6 +53,13 @@ export const Tooltip = ({
     right: "right-full top-1/2 -translate-y-1/2 border-r-(--foreground)",
   };
 
+  const animationClasses = {
+    top: "animate-[tooltip-in-top_150ms_ease-out_forwards]",
+    bottom: "animate-[tooltip-in-bottom_150ms_ease-out_forwards]",
+    left: "animate-[tooltip-in-left_150ms_ease-out_forwards]",
+    right: "animate-[tooltip-in-right_150ms_ease-out_forwards]",
+  };
+
   return (
     <span
       className="relative inline-flex"
@@ -70,20 +77,26 @@ export const Tooltip = ({
           id={id}
           role="tooltip"
           className={`
-            absolute z-50 whitespace-nowrap rounded-md px-2 py-1 text-xs
-            font-(--font-geist-mono)
-            bg-(--foreground) text-(--background)
-            pointer-events-none
+            absolute z-50 pointer-events-none
             ${positionClasses[side]}
           `}
         >
-          {content}
           <span
             className={`
-              absolute border-4 border-transparent
-              ${arrowClasses[side]}
+              relative block whitespace-nowrap rounded-md px-2 py-1 text-xs
+              font-(--font-geist-mono)
+              bg-(--foreground) text-(--background)
+              ${animationClasses[side]}
             `}
-          />
+          >
+            {content}
+            <span
+              className={`
+                absolute border-4 border-transparent
+                ${arrowClasses[side]}
+              `}
+            />
+          </span>
         </span>
       )}
     </span>
