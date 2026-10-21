@@ -10,6 +10,7 @@ export const ThemeSwitcher = () => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.shiftKey && e.key === "D") {
         switchTheme();
+        e.preventDefault();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -20,7 +21,8 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
-      onClick={switchTheme}
+      data-theme-toggle
+      onClick={(e) => switchTheme(e)}
       className="
         flex size-8 cursor-pointer items-center justify-center
         rounded-lg transition-colors duration-200
