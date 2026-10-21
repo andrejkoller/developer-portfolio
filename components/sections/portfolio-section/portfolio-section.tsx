@@ -12,7 +12,7 @@ export const PortfolioSection = () => {
         {section.projects.map((project) => (
           <Link
             key={project.key}
-            href={`/projects/${project.key}`}
+            href={`/projects?project=${project.key}`}
             className="aspect-square overflow-hidden"
             aria-label={project.alt ?? project.title}
           >

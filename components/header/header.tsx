@@ -1,12 +1,24 @@
+"use client";
+
 import { headerConfig } from "@/configs/header.config";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 import { Tooltip } from "@/components/tooltip";
 
 export const Header = () => {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const isProjectPage =
+    pathname.startsWith("/projects") && searchParams.has("project");
+
   return (
     <header
-      className="sticky top-0 z-70 w-full bg-(--background)"
+      className={`
+        fixed z-70 w-full bg-(--background)
+        ${isProjectPage ? "bottom-0" : "top-0"}
+      `}
       aria-label="Header"
     >
       <div className="layout-container flex items-center justify-between py-4">
@@ -27,7 +39,10 @@ export const Header = () => {
         </div>
 
         {/* Theme Switcher */}
-        <Tooltip content="Toggle theme (Shift + D)" side="bottom">
+        <Tooltip
+          content="Toggle theme (Shift + D)"
+          side={isProjectPage ? "top" : "bottom"}
+        >
           <ThemeSwitcher />
         </Tooltip>
       </div>
