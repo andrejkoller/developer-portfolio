@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { headerConfig } from "@/configs/header.config";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -7,12 +8,24 @@ import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 import { Tooltip } from "@/components/tooltip";
 
 export const Header = () => {
+  return (
+    <Suspense fallback={<HeaderContent isProjectPage={false} />}>
+      <HeaderWithSearchParams />
+    </Suspense>
+  );
+};
+
+const HeaderWithSearchParams = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const isProjectPage =
     pathname.startsWith("/projects") && searchParams.has("project");
 
+  return <HeaderContent isProjectPage={isProjectPage} />;
+};
+
+const HeaderContent = ({ isProjectPage }: { isProjectPage: boolean }) => {
   return (
     <header
       className={`
