@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  useMemo,
-  useRef,
-  useState,
-  useEffect,
-  useLayoutEffect,
-  useCallback,
-} from "react";
+import * as React from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { projectsConfig } from "@/configs/projects.config";
@@ -16,22 +9,22 @@ import { cn } from "@/lib/merge-classes";
 export default function ProjectsView() {
   const searchParams = useSearchParams();
   const activeKey = searchParams.get("project");
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [ready, setReady] = useState(false);
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const [ready, setReady] = React.useState(false);
 
-  const projects = useMemo(() => {
+  const projects = React.useMemo(() => {
     if (!activeKey) return projectsConfig;
     const active = projectsConfig.find((p) => p.key === activeKey);
     const rest = projectsConfig.filter((p) => p.key !== activeKey);
     return active ? [active, ...rest] : projectsConfig;
   }, [activeKey]);
 
-  const loopProjects = useMemo(
+  const loopProjects = React.useMemo(
     () => [...projects, ...projects, ...projects],
     [projects],
   );
 
-  const getPeriod = useCallback(() => {
+  const getPeriod = React.useCallback(() => {
     const el = scrollRef.current;
     if (!el) return 0;
     const first = el.children[0] as HTMLElement | undefined;
@@ -40,7 +33,7 @@ export default function ProjectsView() {
     return second.offsetLeft - first.offsetLeft;
   }, [projects.length]);
 
-  const wrap = useCallback(() => {
+  const wrap = React.useCallback(() => {
     const el = scrollRef.current;
     const period = getPeriod();
     if (!el || !period) return;
@@ -52,7 +45,7 @@ export default function ProjectsView() {
     }
   }, [getPeriod]);
 
-  useLayoutEffect(() => {
+  React.useLayoutEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
@@ -63,7 +56,7 @@ export default function ProjectsView() {
     setReady(true);
   }, [loopProjects, getPeriod]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
@@ -87,7 +80,7 @@ export default function ProjectsView() {
   return (
     <div className="flex h-dvh flex-col">
       {/* Back */}
-      <div className="flex h-(--header-height) shrink-0 items-center px-6">
+      <div className="flex h-(--header-height) shrink-0 items-center px-6 animate-fade-in">
         <Link
           href="/"
           className="text-xs uppercase font-(family-name:--font-geist-mono) font-medium underline decoration-dotted"
@@ -104,7 +97,7 @@ export default function ProjectsView() {
             "hidden h-full w-full items-center gap-10 overflow-x-auto overflow-y-hidden px-6 md:flex",
             "scrollbar-none [&::-webkit-scrollbar]:hidden",
             "scroll-auto",
-            !ready && "invisible",
+            ready ? "animate-fade-in delay-1" : "invisible",
           )}
         >
           {loopProjects.map((project, index) => (
@@ -112,7 +105,7 @@ export default function ProjectsView() {
           ))}
         </div>
 
-        <div className="flex w-full flex-col overflow-y-auto px-6 md:hidden">
+        <div className="flex w-full flex-col overflow-y-auto px-6 animate-fade-in delay-1 md:hidden">
           {projects.map((project) => (
             <ProjectGroup key={project.key} project={project} mobile />
           ))}
