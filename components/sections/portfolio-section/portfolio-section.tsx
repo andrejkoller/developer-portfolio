@@ -1,4 +1,5 @@
 import { portfolioConfig } from "@/configs/portfolio.config";
+import { cn } from "@/lib/merge-classes";
 import Link from "next/link";
 
 export const PortfolioSection = () => {
@@ -13,10 +14,22 @@ export const PortfolioSection = () => {
           <Link
             key={project.key}
             href={`/projects?project=${project.key}`}
-            className="aspect-square overflow-hidden"
+            className={cn(
+              "group aspect-square overflow-hidden rounded-2xl",
+              "transition-transform duration-300 ease-out",
+              "hover:scale-[1.02]",
+            )}
             aria-label={project.alt ?? project.title}
+            // optional: onMouseEnter={(e) => e.currentTarget.play()}
+            // optional: onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
           >
-            <div className="h-full w-full object-cover bg-(--accent) rounded-2xl"></div>
+            <div
+              className={cn(
+                "h-full w-full bg-(--accent) rounded-2xl",
+                "transition-opacity duration-300",
+                "group-hover:opacity-90",
+              )}
+            />
           </Link>
         ))}
       </div>
