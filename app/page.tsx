@@ -6,12 +6,12 @@ import { LogoSection } from "@/components/sections/logo-section";
 
 export default function HomePage() {
   return (
-    <>
+    <div className="layout-container">
       <LogoSection />
       <IntroductionSection />
       <ExperienceSection />
       <PortfolioSection />
       <BuildingSection />
-    </>
+    </div>
   );
 }
