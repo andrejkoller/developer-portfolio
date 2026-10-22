@@ -8,7 +8,7 @@ export const ExperienceSection = () => (
       {experienceConfig.map((experience) => (
         <div
           key={experience.key}
-          className="flex items-center justify-between py-0.5"
+          className="flex items-center justify-between h-6"
         >
           <span className="text-(--foreground)">{experience.company}</span>
 
