@@ -8,12 +8,8 @@ export default function ClientLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ThemeProvider>
-      <div className="flex flex-col">
-        <Header />
-        <main className="layout-container" aria-label="Main content">
-          {children}
-        </main>
-      </div>
+      <Header />
+      <main aria-label="Main content">{children}</main>
     </ThemeProvider>
   );
 }
