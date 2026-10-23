@@ -9,8 +9,8 @@ export const ThemeSwitcher = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.shiftKey && e.key === "D") {
-        switchTheme();
         e.preventDefault();
+        switchTheme();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
