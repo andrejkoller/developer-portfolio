@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useSyncExternalStore } from "react";
 import { ThemeContext } from "./theme-context";
 import type { Theme } from "./types";
+import { playThemeSound } from "@/lib/theme-sound";
 
 const getServerSnapshot = (): Theme => "dark";
 
@@ -40,28 +41,33 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     (event?: React.MouseEvent) => {
       const newTheme: Theme = theme === "light" ? "dark" : "light";
 
-      let x: number;
-      let y: number;
-
       if (event) {
-        x = event.clientX;
-        y = event.clientY;
+        document.documentElement.style.setProperty(
+          "--theme-x",
+          `${event.clientX}px`,
+        );
+        document.documentElement.style.setProperty(
+          "--theme-y",
+          `${event.clientY}px`,
+        );
       } else {
         const toggle = document.querySelector<HTMLElement>(
           "[data-theme-toggle]",
         );
         if (toggle) {
           const rect = toggle.getBoundingClientRect();
-          x = rect.left + rect.width / 2;
-          y = rect.top + rect.height / 2;
-        } else {
-          x = window.innerWidth - 32;
-          y = 32;
+          document.documentElement.style.setProperty(
+            "--theme-x",
+            `${rect.left + rect.width / 2}px`,
+          );
+          document.documentElement.style.setProperty(
+            "--theme-y",
+            `${rect.top + rect.height / 2}px`,
+          );
         }
       }
 
-      document.documentElement.style.setProperty("--theme-x", `${x}px`);
-      document.documentElement.style.setProperty("--theme-y", `${y}px`);
+      playThemeSound(newTheme === "dark");
 
       const apply = () => {
         document.documentElement.dataset.theme = newTheme;
