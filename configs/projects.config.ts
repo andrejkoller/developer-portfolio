@@ -95,4 +95,12 @@ export const projectsConfig: Project[] = [
     alt: "Fermola Publishing House",
     images: [{ width: 1000 }, { width: 700 }, { width: 850 }, { width: 600 }],
   },
+  {
+    key: "highbible",
+    title: "High Bible",
+    description: "Description coming soon",
+    url: "https://highbible.com",
+    alt: "High Bible Platform",
+    images: [{ width: 1000 }, { width: 700 }, { width: 850 }],
+  },
 ];
