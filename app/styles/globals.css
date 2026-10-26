@@ -16,8 +16,11 @@
   --border: #e5e5e5;
 
   /* Selection */
-  --selection-background: #111111;
+  --selection-background: #7a9bb8;
   --selection-foreground: #fafafa;
+
+  /* Cursor */
+  --cursor: #7a9bb8;
 }
 
 [data-theme="dark"] {
@@ -33,8 +36,11 @@
   --border: #262626;
 
   /* Selection */
-  --selection-background: #f5f5f5;
+  --selection-background: #7a9bb8;
   --selection-foreground: #0a0a0a;
+
+  /* Cursor */
+  --cursor: #7a9bb8;
 }
 
 * {
@@ -220,4 +226,22 @@ body {
 }
 .delay-5 {
   animation-delay: 0.58s;
+}
+
+/* Custom cursor for devices with hover and fine pointer */
+
+@media (hover: hover) and (pointer: fine) {
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* Fallback cursor for touch devices */
+
+@media (hover: none), (pointer: coarse) {
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: auto !important;
+  }
 }

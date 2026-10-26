@@ -45,7 +45,7 @@ const HeaderContent = ({ isProjectPage }: { isProjectPage: boolean }) => {
               target={link.hasTargetBlank ? "_blank" : undefined}
               rel={link.hasRelNoopener ? "noopener" : undefined}
               aria-label={link.title}
-              className="text-xs uppercase font-(family-name:--font-geist-mono) font-medium underline decoration-dotted"
+              className="text-xs uppercase font-(family-name:--font-geist-mono) font-bold underline decoration-dotted"
             >
               {link.title}
             </Link>
