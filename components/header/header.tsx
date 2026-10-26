@@ -35,22 +35,23 @@ const HeaderContent = ({ isProjectPage }: { isProjectPage: boolean }) => {
       `)}
       aria-label="Header"
     >
-      <div className="layout-container flex items-center justify-between h-full">
+      <nav className="layout-container flex items-center justify-between h-full">
         {/* Links */}
-        <div className="flex gap-6">
+        <ul className="flex gap-6">
           {headerConfig.map((link) => (
-            <Link
-              key={link.key}
-              href={link.url}
-              target={link.hasTargetBlank ? "_blank" : undefined}
-              rel={link.hasRelNoopener ? "noopener" : undefined}
-              aria-label={link.title}
-              className="text-xs uppercase font-(family-name:--font-geist-mono) font-bold underline decoration-dotted"
-            >
-              {link.title}
-            </Link>
+            <li key={link.key}>
+              <Link
+                href={link.url}
+                target={link.hasTargetBlank ? "_blank" : undefined}
+                rel={link.hasRelNoopener ? "noopener" : undefined}
+                aria-label={link.title}
+                className="text-xs uppercase font-(family-name:--font-geist-mono) font-bold underline decoration-dotted"
+              >
+                {link.title}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* Theme Switcher */}
         <Tooltip
@@ -59,7 +60,7 @@ const HeaderContent = ({ isProjectPage }: { isProjectPage: boolean }) => {
         >
           <ThemeSwitcher />
         </Tooltip>
-      </div>
+      </nav>
     </header>
   );
 };
