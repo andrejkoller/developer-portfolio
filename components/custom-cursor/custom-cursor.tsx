@@ -1,14 +1,15 @@
 "use client";
 
 import { cn } from "@/lib/merge-classes";
-import { useEffect, useState } from "react";
+import * as React from "react";
 
 export const CustomCursor = () => {
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-  const [visible, setVisible] = useState(false);
-  const [enabled, setEnabled] = useState(false);
+  const [pos, setPos] = React.useState({ x: 0, y: 0 });
+  const [visible, setVisible] = React.useState(false);
+  const [enabled, setEnabled] = React.useState(false);
+  const [overInteractive, setOverInteractive] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
 
     const sync = () => setEnabled(mq.matches);
@@ -16,7 +17,9 @@ export const CustomCursor = () => {
     mq.addEventListener("change", sync);
 
     const onTouch = () => setEnabled(false);
-    window.addEventListener("touchstart", onTouch, { passive: true });
+    window.addEventListener("touchstart", onTouch, {
+      passive: true,
+    });
 
     return () => {
       mq.removeEventListener("change", sync);
@@ -24,21 +27,37 @@ export const CustomCursor = () => {
     };
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!enabled) {
       document.documentElement.classList.remove("has-custom-cursor");
       setVisible(false);
+      setOverInteractive(false);
       return;
     }
 
     document.documentElement.classList.add("has-custom-cursor");
 
+    const interactiveSelector =
+      "a, button, [data-hover-border], [role='button']";
+
     const onMove = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
       setVisible(true);
+
+      const target = e.target;
+
+      if (!(target instanceof Element)) {
+        setOverInteractive(false);
+        return;
+      }
+
+      setOverInteractive(Boolean(target.closest(interactiveSelector)));
     };
 
-    const onLeave = () => setVisible(false);
+    const onLeave = () => {
+      setVisible(false);
+      setOverInteractive(false);
+    };
 
     window.addEventListener("mousemove", onMove);
     document.addEventListener("mouseleave", onLeave);
@@ -50,7 +69,7 @@ export const CustomCursor = () => {
     };
   }, [enabled]);
 
-  if (!enabled || !visible) return null;
+  if (!enabled) return null;
 
   const circle = 16;
   const cross = 28;
@@ -58,8 +77,12 @@ export const CustomCursor = () => {
 
   return (
     <div
-      aria-hidden
-      className="pointer-events-none fixed top-0 left-0 z-9999"
+      aria-hidden="true"
+      className={cn(
+        "pointer-events-none fixed top-0 left-0 z-9999",
+        "transition-opacity duration-200 ease-out",
+        visible && !overInteractive ? "opacity-100" : "opacity-0",
+      )}
       style={{
         transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`,
       }}
@@ -73,7 +96,7 @@ export const CustomCursor = () => {
           transform: `translate(-${halfCross}px, -${halfCross}px)`,
         }}
       >
-        {/* Circle 16×16, centered */}
+        {/* Circle */}
         <div
           className="absolute rounded-full border border-(--cursor)"
           style={{
@@ -98,7 +121,7 @@ export const CustomCursor = () => {
           "absolute top-4 left-4",
           "font-(family-name:--font-geist-mono) font-bold",
           "text-[10px] leading-tight tracking-wide",
-          "text-(--foreground)",
+          "text-(--foreground) mix-blend-difference",
         )}
       >
         <div>X:{String(Math.round(pos.x)).padStart(4, "0")}</div>

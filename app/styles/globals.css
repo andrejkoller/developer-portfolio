@@ -15,6 +15,7 @@
   /* Primary */
   --primary: #7a9bb8;
   --primary-foreground: #fafafa;
+  --primary-accent: #7a9bb814;
 
   /* Optional extras */
   --border: #e5e5e5;
@@ -39,6 +40,7 @@
   /* Primary */
   --primary: #7a9bb8;
   --primary-foreground: #0a0a0a;
+  --primary-accent: #7a9bb814;
 
   /* Optional extras */
   --border: #262626;

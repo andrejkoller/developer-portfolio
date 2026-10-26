@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
+import { HoverOutline } from "@/components/hover-outline";
 import { headerConfig } from "@/configs/header.config";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -29,26 +30,28 @@ const HeaderWithSearchParams = () => {
 const HeaderContent = ({ isProjectPage }: { isProjectPage: boolean }) => {
   return (
     <header
-      className={cn(`
-        fixed z-70 flex items-center w-full h-(--header-height) bg-(--background)
-        ${isProjectPage ? "bottom-0" : "top-0"}
-      `)}
+      className={cn(
+        "fixed z-70 flex h-(--header-height) w-full items-center bg-(--background)",
+        isProjectPage ? "bottom-0" : "top-0",
+      )}
       aria-label="Header"
     >
-      <nav className="layout-container flex items-center justify-between h-full">
-        {/* List of links */}
+      <nav className="layout-container flex h-full items-center justify-between">
+        {/* Links */}
         <ul className="flex gap-6">
           {headerConfig.map((link) => (
             <li key={link.key}>
-              <Link
-                href={link.url}
-                target={link.hasTargetBlank ? "_blank" : undefined}
-                rel={link.hasRelNoopener ? "noopener" : undefined}
-                aria-label={link.title}
-                className="text-sm font-(family-name:--font-geist-mono) font-bold underline decoration-dotted"
-              >
-                {link.title}
-              </Link>
+              <HoverOutline className="flex w-full items-center justify-center">
+                <Link
+                  href={link.url}
+                  target={link.hasTargetBlank ? "_blank" : undefined}
+                  rel={link.hasRelNoopener ? "noopener" : undefined}
+                  aria-label={link.title}
+                  className="text-sm font-bold font-(family-name:--font-geist-mono) underline decoration-dotted rounded-full"
+                >
+                  {link.title}
+                </Link>
+              </HoverOutline>
             </li>
           ))}
         </ul>

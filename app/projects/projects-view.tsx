@@ -3,6 +3,7 @@
 import * as React from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { HoverOutline } from "@/components/hover-outline";
 import { projectsConfig } from "@/configs/projects.config";
 import { cn } from "@/lib/merge-classes";
 
@@ -106,13 +107,16 @@ export default function ProjectsView() {
 
   return (
     <div className="flex h-dvh flex-col">
+      {/* Back link */}
       <div className="flex h-(--header-height) shrink-0 items-center px-6 animate-fade-in">
-        <Link
-          href="/"
-          className="text-xs uppercase font-(family-name:--font-geist-mono) font-bold underline decoration-dotted"
-        >
-          Back
-        </Link>
+        <HoverOutline className="inline-flex">
+          <Link
+            href="/"
+            className="text-xs font-bold uppercase font-(family-name:--font-geist-mono) underline decoration-dotted rounded-full"
+          >
+            Back
+          </Link>
+        </HoverOutline>
       </div>
 
       <div className="flex min-h-0 flex-1 items-start pb-(--header-height)">
@@ -181,14 +185,16 @@ function ProjectGroup({
     >
       <div className={cn("flex flex-col", !mobile && "w-100 shrink-0 pr-8")}>
         <h2 className="mb-4">
-          <Link
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-(family-name:--font-geist-mono) font-bold underline decoration-dotted"
-          >
-            {project.title}
-          </Link>
+          <HoverOutline className="inline-flex">
+            <Link
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold font-(family-name:--font-geist-mono) underline decoration-dotted rounded-full"
+            >
+              {project.title}
+            </Link>
+          </HoverOutline>
         </h2>
         <p className="leading-relaxed text-(--muted)">{project.description}</p>
       </div>
