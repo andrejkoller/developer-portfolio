@@ -1,5 +1,6 @@
 "use client";
 
+import { CustomCursor } from "@/components/custom-cursor";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme";
 
@@ -10,6 +11,8 @@ export default function ClientLayout({
     <ThemeProvider>
       <Header />
       <main aria-label="Main content">{children}</main>
+
+      <CustomCursor />
     </ThemeProvider>
   );
 }

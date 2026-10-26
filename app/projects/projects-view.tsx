@@ -77,7 +77,6 @@ export default function ProjectsView() {
     };
   }, [wrap]);
 
-  // Mobile: Projekte beim Scrollen nacheinander einblenden
   React.useEffect(() => {
     const root = mobileRef.current;
     if (!root) return;
@@ -90,13 +89,13 @@ export default function ProjectsView() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target); // nur einmal
+            observer.unobserve(entry.target);
           }
         });
       },
       {
-        root: null, // Viewport
-        rootMargin: "0px 0px -12% 0px", // etwas später triggern
+        root: null,
+        rootMargin: "0px 0px -12% 0px",
         threshold: 0.15,
       },
     );
@@ -110,7 +109,7 @@ export default function ProjectsView() {
       <div className="flex h-(--header-height) shrink-0 items-center px-6 animate-fade-in">
         <Link
           href="/"
-          className="text-xs uppercase font-(family-name:--font-geist-mono) font-medium underline decoration-dotted"
+          className="text-xs uppercase font-(family-name:--font-geist-mono) font-bold underline decoration-dotted"
         >
           Back
         </Link>
@@ -143,7 +142,6 @@ export default function ProjectsView() {
               project={project}
               mobile
               reveal
-              // erstes Projekt etwas früher sichtbar wirken lassen
               revealDelay={index === 0 ? 0 : undefined}
             />
           ))}
@@ -173,7 +171,6 @@ function ProjectGroup({
           ? "mb-16 flex-col gap-4 not-first:mb-[calc(4rem+var(--header-height))]"
           : "w-max shrink-0 items-start gap-4",
         reveal && "project-reveal",
-        // erstes Projekt sofort sichtbar (optional)
         reveal && revealDelay === 0 && "is-visible",
       )}
       style={
@@ -183,7 +180,7 @@ function ProjectGroup({
       }
     >
       <div className={cn("flex flex-col", !mobile && "w-100 shrink-0 pr-8")}>
-        <h2 className="mb-4 font-medium">
+        <h2 className="mb-4">
           <Link
             href={project.url}
             target="_blank"
