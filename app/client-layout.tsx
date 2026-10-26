@@ -2,7 +2,7 @@
 
 import { CustomCursor } from "@/components/custom-cursor";
 import { Header } from "@/components/header";
-import { ThemeProvider } from "@/components/theme";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
 export default function ClientLayout({
   children,
