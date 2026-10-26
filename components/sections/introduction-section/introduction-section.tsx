@@ -25,7 +25,7 @@ export const IntroductionSection = () => {
         Get in touch:{" "}
         <Link
           href="mailto:contact@andrejkoller.com"
-          className="underline decoration-dotted"
+          className="font-(family-name:--font-geist-mono) underline decoration-dotted"
         >
           contact@andrejkoller.com
         </Link>

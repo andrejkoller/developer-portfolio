@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { cn } from "@/lib/merge-classes";
 
 interface TooltipProps {
   content: string;
@@ -76,25 +77,25 @@ export const Tooltip = ({
         <span
           id={id}
           role="tooltip"
-          className={`
-            absolute z-50 pointer-events-none
-            ${positionClasses[side]}
-          `}
+          className={cn(
+            "absolute z-50 pointer-events-none",
+            positionClasses[side],
+          )}
         >
           <span
-            className={`
-              relative block whitespace-nowrap rounded-md px-2 py-1 text-xs
-              font-(--font-geist-mono)
-              bg-(--foreground) text-(--background)
-              ${animationClasses[side]}
-            `}
+            className={cn(
+              "relative block whitespace-nowrap rounded-md px-2 py-1 text-xs",
+              "font-(--font-geist-mono)",
+              "bg-(--foreground) text-(--background)",
+              animationClasses[side],
+            )}
           >
             {content}
             <span
-              className={`
-                absolute border-4 border-transparent
-                ${arrowClasses[side]}
-              `}
+              className={cn(
+                "absolute border-4 border-transparent",
+                arrowClasses[side],
+              )}
             />
           </span>
         </span>
