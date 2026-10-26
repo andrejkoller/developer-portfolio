@@ -185,7 +185,7 @@ function ProjectGroup({
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-(family-name:--font-geist-mono) underline decoration-dotted"
+            className="font-(family-name:--font-geist-mono) font-bold underline decoration-dotted"
           >
             {project.title}
           </Link>
