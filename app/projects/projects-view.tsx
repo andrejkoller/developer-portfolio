@@ -10,6 +10,7 @@ export default function ProjectsView() {
   const searchParams = useSearchParams();
   const activeKey = searchParams.get("project");
   const scrollRef = React.useRef<HTMLDivElement>(null);
+  const mobileRef = React.useRef<HTMLDivElement>(null);
   const [ready, setReady] = React.useState(false);
 
   const projects = React.useMemo(() => {
@@ -62,7 +63,6 @@ export default function ProjectsView() {
 
     const onWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
-
       e.preventDefault();
       el.scrollLeft += e.deltaY * 2.5;
       wrap();
@@ -77,9 +77,36 @@ export default function ProjectsView() {
     };
   }, [wrap]);
 
+  // Mobile: Projekte beim Scrollen nacheinander einblenden
+  React.useEffect(() => {
+    const root = mobileRef.current;
+    if (!root) return;
+
+    const items = root.querySelectorAll<HTMLElement>("[data-project-reveal]");
+    if (!items.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target); // nur einmal
+          }
+        });
+      },
+      {
+        root: null, // Viewport
+        rootMargin: "0px 0px -12% 0px", // etwas später triggern
+        threshold: 0.15,
+      },
+    );
+
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, [projects]);
+
   return (
     <div className="flex h-dvh flex-col">
-      {/* Back */}
       <div className="flex h-(--header-height) shrink-0 items-center px-6 animate-fade-in">
         <Link
           href="/"
@@ -89,8 +116,8 @@ export default function ProjectsView() {
         </Link>
       </div>
 
-      {/* Content */}
       <div className="flex min-h-0 flex-1 items-start pb-(--header-height)">
+        {/* Desktop */}
         <div
           ref={scrollRef}
           className={cn(
@@ -105,9 +132,20 @@ export default function ProjectsView() {
           ))}
         </div>
 
-        <div className="flex w-full flex-col overflow-y-auto px-6 animate-fade-in delay-1 md:hidden">
-          {projects.map((project) => (
-            <ProjectGroup key={project.key} project={project} mobile />
+        {/* Mobile */}
+        <div
+          ref={mobileRef}
+          className="flex w-full flex-col overflow-y-auto px-6 md:hidden"
+        >
+          {projects.map((project, index) => (
+            <ProjectGroup
+              key={project.key}
+              project={project}
+              mobile
+              reveal
+              // erstes Projekt etwas früher sichtbar wirken lassen
+              revealDelay={index === 0 ? 0 : undefined}
+            />
           ))}
         </div>
       </div>
@@ -118,20 +156,32 @@ export default function ProjectsView() {
 function ProjectGroup({
   project,
   mobile = false,
+  reveal = false,
+  revealDelay,
 }: {
   project: (typeof projectsConfig)[number];
   mobile?: boolean;
+  reveal?: boolean;
+  revealDelay?: number;
 }) {
   return (
     <section
+      data-project-reveal={reveal ? "" : undefined}
       className={cn(
         "flex",
         mobile
-          ? "flex-col gap-4 not-first:mb-[calc(4rem+var(--header-height))] mb-16"
+          ? "mb-16 flex-col gap-4 not-first:mb-[calc(4rem+var(--header-height))]"
           : "w-max shrink-0 items-start gap-4",
+        reveal && "project-reveal",
+        // erstes Projekt sofort sichtbar (optional)
+        reveal && revealDelay === 0 && "is-visible",
       )}
+      style={
+        reveal && revealDelay
+          ? { transitionDelay: `${revealDelay}ms` }
+          : undefined
+      }
     >
-      {/* Text */}
       <div className={cn("flex flex-col", !mobile && "w-100 shrink-0 pr-8")}>
         <h2 className="mb-4 font-medium">
           <Link
@@ -146,7 +196,6 @@ function ProjectGroup({
         <p className="leading-relaxed text-(--muted)">{project.description}</p>
       </div>
 
-      {/* Images */}
       <div className={cn("flex gap-4", mobile && "flex-col")}>
         {project.images.map((image, i) => (
           <div
