@@ -6,7 +6,7 @@ import { LogoSection } from "@/components/sections/logo-section";
 
 export default function HomePage() {
   return (
-    <div className="layout-container pb-16 flex flex-col gap-16">
+    <div className="layout-container py-16 flex flex-col gap-16">
       <LogoSection />
       <IntroductionSection />
       <ExperienceSection />
