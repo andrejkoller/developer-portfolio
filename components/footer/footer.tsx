@@ -4,11 +4,16 @@ import { footerConfig } from "@/configs/footer.config";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 import { Tooltip } from "@/components/tooltip";
+import { cn } from "@/lib/merge-classes";
 
 export const Footer = () => {
   return (
     <footer
-      className="flex h-(--footer-height) w-full items-center bg-(--background)"
+      className={cn(
+        "relative flex h-(--footer-height) w-full items-center bg-(--background) animate-fade-up delay-5",
+        "before:absolute before:inset-x-0 before:top-0 before:h-px",
+        "before:bg-(--border) before:content-['']",
+      )}
       aria-label="Footer"
     >
       <nav className="layout-container flex h-full items-center justify-between">
