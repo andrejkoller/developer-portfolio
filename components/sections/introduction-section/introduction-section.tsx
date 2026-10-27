@@ -11,7 +11,7 @@ export const IntroductionSection = () => {
   const years = getExperienceYears();
 
   return (
-    <section className="mb-16 animate-fade-up delay-1">
+    <section className="animate-fade-up delay-1">
       <p className="mb-4 leading-relaxed">
         I’m Andrej Koller - a Designer and Frontend Engineer with {years}+ years
         of experience, known for pixel-perfect execution and an obsessive

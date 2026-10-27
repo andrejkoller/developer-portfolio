@@ -6,7 +6,7 @@ export const PortfolioSection = () => {
   const section = portfolioConfig;
 
   return (
-    <section className="mb-16 animate-fade-up delay-3">
+    <section className="animate-fade-up delay-3">
       <h2 className="mb-4 text-sm font-medium">{section.title}</h2>
 
       <ul className="grid grid-cols-2 gap-3">
