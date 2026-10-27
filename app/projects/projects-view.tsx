@@ -116,7 +116,10 @@ export default function ProjectsView() {
         className={cn(
           "flex h-16 w-full items-center px-6",
           "bg-(--background) animate-fade-in",
-          "relative",
+          "relative z-70",
+          // Mobile: fixed oben
+          "max-md:fixed max-md:top-0 max-md:left-0 max-md:right-0",
+          // Border unten
           "before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:z-10",
           "before:h-px before:bg-(--border) before:content-['']",
         )}
@@ -130,7 +133,7 @@ export default function ProjectsView() {
       </div>
 
       {/* Projects */}
-      <div className="flex min-h-0 flex-1 flex-col md:justify-center">
+      <div className="flex min-h-0 flex-1 flex-col max-md:pt-16 md:justify-center">
         {/* Desktop */}
         <div
           ref={scrollRef}
