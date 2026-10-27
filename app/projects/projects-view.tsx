@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { HoverOutline } from "@/components/hover-outline";
 import { projectsConfig } from "@/configs/projects.config";
 import { cn } from "@/lib/merge-classes";
 
@@ -106,27 +105,30 @@ export default function ProjectsView() {
   }, [projects]);
 
   return (
-    <div className="flex h-dvh flex-col">
-      {/* Back link */}
-      <div className="flex h-(--header-height) shrink-0 items-center px-6 animate-fade-in">
-        <HoverOutline className="inline-flex">
-          <Link
-            href="/"
-            className="text-xs font-bold uppercase font-(family-name:--font-geist-mono) underline decoration-dotted rounded-full"
-          >
-            Back
-          </Link>
-        </HoverOutline>
+    <div
+      className="flex flex-col"
+      style={{
+        minHeight: "calc(100dvh - var(--footer-height))",
+      }}
+    >
+      {/* Back */}
+      <div className="flex h-16 shrink-0 items-center px-6 animate-fade-in">
+        <Link
+          href="/"
+          className="rounded-full text-xs font-bold uppercase font-(family-name:--font-geist-mono) underline decoration-dotted"
+        >
+          Back
+        </Link>
       </div>
 
-      <div className="flex min-h-0 flex-1 items-start pb-(--header-height)">
+      {/* Projects */}
+      <div className="flex min-h-0 flex-1 flex-col justify-center">
         {/* Desktop */}
         <div
           ref={scrollRef}
           className={cn(
             "hidden h-full w-full items-center gap-10 overflow-x-auto overflow-y-hidden px-6 md:flex",
-            "scrollbar-none [&::-webkit-scrollbar]:hidden",
-            "scroll-auto",
+            "scrollbar-none [&::-webkit-scrollbar]:hidden scroll-auto",
             ready ? "animate-fade-in delay-1" : "invisible",
           )}
         >
@@ -138,7 +140,7 @@ export default function ProjectsView() {
         {/* Mobile */}
         <div
           ref={mobileRef}
-          className="flex w-full flex-col overflow-y-auto px-6 md:hidden"
+          className="flex h-full w-full flex-col overflow-y-auto px-6 md:hidden"
         >
           {projects.map((project, index) => (
             <ProjectGroup
@@ -171,9 +173,7 @@ function ProjectGroup({
       data-project-reveal={reveal ? "" : undefined}
       className={cn(
         "flex",
-        mobile
-          ? "mb-16 flex-col gap-4 not-first:mb-[calc(4rem+var(--header-height))]"
-          : "w-max shrink-0 items-start gap-4",
+        mobile ? "mb-16 flex-col gap-4" : "w-max shrink-0 items-start gap-4",
         reveal && "project-reveal",
         reveal && revealDelay === 0 && "is-visible",
       )}
@@ -185,16 +185,14 @@ function ProjectGroup({
     >
       <div className={cn("flex flex-col", !mobile && "w-100 shrink-0 pr-8")}>
         <h2 className="mb-4">
-          <HoverOutline className="inline-flex">
-            <Link
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold font-(family-name:--font-geist-mono) underline decoration-dotted rounded-full"
-            >
-              {project.title}
-            </Link>
-          </HoverOutline>
+          <Link
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold font-(family-name:--font-geist-mono) underline decoration-dotted"
+          >
+            {project.title}
+          </Link>
         </h2>
         <p className="leading-relaxed text-(--muted)">{project.description}</p>
       </div>

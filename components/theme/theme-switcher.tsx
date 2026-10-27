@@ -3,7 +3,6 @@
 import * as React from "react";
 import { useTheme } from "./use-theme";
 import { cn } from "@/lib/merge-classes";
-import { HoverOutline } from "@/components/hover-outline";
 
 export const ThemeSwitcher = () => {
   const { theme, switchTheme, mounted } = useTheme();
@@ -22,20 +21,18 @@ export const ThemeSwitcher = () => {
   if (!mounted) return null;
 
   return (
-    <HoverOutline className="flex w-full items-center justify-center">
-      <button
-        data-theme-toggle
-        onClick={(e) => switchTheme(e)}
-        className={cn(
-          "flex size-8 cursor-pointer items-center justify-center",
-          "rounded-lg transition-colors duration-200",
-          "hover:bg-(--accent)",
-        )}
-        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode (Shift + D)`}
-      >
-        <ClassicIcon isDark={theme === "dark"} />
-      </button>
-    </HoverOutline>
+    <button
+      data-theme-toggle
+      onClick={(e) => switchTheme(e)}
+      className={cn(
+        "flex size-8 cursor-pointer items-center justify-center",
+        "rounded-lg transition-colors duration-200",
+        "hover:bg-(--accent)",
+      )}
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode (Shift + D)`}
+    >
+      <ClassicIcon isDark={theme === "dark"} />
+    </button>
   );
 };
 
