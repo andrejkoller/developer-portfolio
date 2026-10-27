@@ -130,7 +130,7 @@ export default function ProjectsView() {
       </div>
 
       {/* Projects */}
-      <div className="flex min-h-0 flex-1 flex-col justify-center">
+      <div className="flex min-h-0 flex-1 flex-col md:justify-center">
         {/* Desktop */}
         <div
           ref={scrollRef}
@@ -147,7 +147,7 @@ export default function ProjectsView() {
         {/* Mobile */}
         <div
           ref={mobileRef}
-          className="my-16 flex gap-16 h-full w-full flex-col overflow-y-auto px-6 md:hidden"
+          className="flex w-full flex-col gap-16 px-6 py-16 md:hidden"
         >
           {projects.map((project, index) => (
             <ProjectGroup
