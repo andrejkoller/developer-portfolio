@@ -1,7 +1,6 @@
-import { HoverOutline } from "@/components/hover-outline";
 import { portfolioConfig } from "@/configs/portfolio.config";
-import { cn } from "@/lib/merge-classes";
 import Link from "next/link";
+import { cn } from "@/lib/merge-classes";
 
 export const PortfolioSection = () => {
   const section = portfolioConfig;
@@ -10,31 +9,29 @@ export const PortfolioSection = () => {
     <section className="mb-16 animate-fade-up delay-3">
       <h2 className="mb-4 text-sm font-medium">{section.title}</h2>
 
-      <HoverOutline>
-        <ul className="grid grid-cols-2 gap-3">
-          {section.projects.map((project) => (
-            <li key={project.key} className="min-w-0">
-              <Link
-                href={`/projects?project=${project.key}`}
-                aria-label={project.alt ?? project.title}
+      <ul className="grid grid-cols-2 gap-3">
+        {section.projects.map((project) => (
+          <li key={project.key} className="min-w-0">
+            <Link
+              href={`/projects?project=${project.key}`}
+              aria-label={project.alt ?? project.title}
+              className={cn(
+                "group block aspect-square overflow-hidden rounded-2xl",
+                "transition-transform duration-300 ease-out",
+                "hover:scale-[1.02]",
+              )}
+            >
+              <div
                 className={cn(
-                  "group block aspect-square overflow-hidden rounded-2xl",
-                  "transition-transform duration-300 ease-out",
-                  "hover:scale-[1.02]",
+                  "h-full w-full rounded-2xl bg-(--accent)",
+                  "transition-opacity duration-300",
+                  "group-hover:opacity-90",
                 )}
-              >
-                <div
-                  className={cn(
-                    "h-full w-full rounded-2xl bg-(--accent)",
-                    "transition-opacity duration-300",
-                    "group-hover:opacity-90",
-                  )}
-                />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </HoverOutline>
+              />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };

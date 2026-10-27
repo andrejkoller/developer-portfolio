@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { HoverOutline } from "@/components/hover-outline";
 
 const START_YEAR = 2024;
 
@@ -24,14 +23,12 @@ export const IntroductionSection = () => {
       </p>
       <p className="mb-4 leading-relaxed">
         Get in touch:{" "}
-        <HoverOutline className="inline-flex align-baseline">
-          <Link
-            href="mailto:contact@andrejkoller.com"
-            className="rounded-full font-bold font-(family-name:--font-geist-mono) underline decoration-dotted"
-          >
-            contact@andrejkoller.com
-          </Link>
-        </HoverOutline>
+        <Link
+          href="mailto:contact@andrejkoller.com"
+          className="font-bold font-(family-name:--font-geist-mono) underline decoration-dotted"
+        >
+          contact@andrejkoller.com
+        </Link>
       </p>
     </section>
   );

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --header-height: 4rem;
+  --footer-height: 4rem;
   --layout-max-width: 32rem;
 
   /* Core */
@@ -13,9 +13,8 @@
   --accent: #f0f0f0;
 
   /* Primary */
-  --primary: #7a9bb8;
+  --primary: #111111;
   --primary-foreground: #fafafa;
-  --primary-accent: #7a9bb814;
 
   /* Optional extras */
   --border: #e5e5e5;
@@ -23,9 +22,6 @@
   /* Selection */
   --selection-background: var(--primary);
   --selection-foreground: var(--primary-foreground);
-
-  /* Cursor */
-  --cursor: var(--primary);
 }
 
 [data-theme="dark"] {
@@ -38,9 +34,8 @@
   --accent: #171717;
 
   /* Primary */
-  --primary: #7a9bb8;
+  --primary: #f5f5f5;
   --primary-foreground: #0a0a0a;
-  --primary-accent: #7a9bb814;
 
   /* Optional extras */
   --border: #262626;
@@ -48,9 +43,6 @@
   /* Selection */
   --selection-background: var(--primary);
   --selection-foreground: var(--primary-foreground);
-
-  /* Cursor */
-  --cursor: var(--primary);
 }
 
 html {
@@ -222,21 +214,5 @@ body {
     transform: none;
     animation: none;
     transition: none;
-  }
-}
-
-/* Custom cursor for devices with hover and fine pointer */
-@media (hover: hover) and (pointer: fine) {
-  .has-custom-cursor,
-  .has-custom-cursor * {
-    cursor: none !important;
-  }
-}
-
-/* Fallback cursor for touch devices */
-@media (hover: none), (pointer: coarse) {
-  .has-custom-cursor,
-  .has-custom-cursor * {
-    cursor: auto !important;
   }
 }
