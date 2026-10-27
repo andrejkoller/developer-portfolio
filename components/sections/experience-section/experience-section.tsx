@@ -1,7 +1,7 @@
 import { experienceConfig } from "@/configs/experience.config";
 
 export const ExperienceSection = () => (
-  <section className="mb-16 animate-fade-up delay-2">
+  <section className="animate-fade-up delay-2">
     <h2 className="mb-4 text-sm font-medium">Past Experience</h2>
 
     <div className="flex flex-col">

@@ -2,17 +2,22 @@
 
 import { footerConfig } from "@/configs/footer.config";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ThemeSwitcher } from "@/components/theme/theme-switcher";
 import { Tooltip } from "@/components/tooltip";
 import { cn } from "@/lib/merge-classes";
 
 export const Footer = () => {
+  const pathname = usePathname();
+  const isProjectsPage = pathname.startsWith("/projects");
+
   return (
     <footer
       className={cn(
-        "relative flex h-(--footer-height) w-full items-center bg-(--background) animate-fade-up delay-5",
+        "relative flex h-(--footer-height) w-full items-center bg-(--background)",
         "before:absolute before:inset-x-0 before:top-0 before:h-px",
         "before:bg-(--border) before:content-['']",
+        isProjectsPage ? "animate-fade-in delay-2" : "animate-fade-up delay-5",
       )}
       aria-label="Footer"
     >

@@ -112,7 +112,15 @@ export default function ProjectsView() {
       }}
     >
       {/* Back */}
-      <div className="flex h-16 shrink-0 items-center px-6 animate-fade-in">
+      <div
+        className={cn(
+          "fixed top-0 z-70 flex h-16 w-full items-center px-6",
+          "bg-(--background) animate-fade-in",
+          "relative",
+          "before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:z-10",
+          "before:h-px before:bg-(--border) before:content-['']",
+        )}
+      >
         <Link
           href="/"
           className="rounded-full text-xs font-bold uppercase font-(family-name:--font-geist-mono) underline decoration-dotted"
@@ -136,11 +144,10 @@ export default function ProjectsView() {
             <ProjectGroup key={`${project.key}-${index}`} project={project} />
           ))}
         </div>
-
         {/* Mobile */}
         <div
           ref={mobileRef}
-          className="flex h-full w-full flex-col overflow-y-auto px-6 md:hidden"
+          className="my-16 flex gap-16 h-full w-full flex-col overflow-y-auto px-6 md:hidden"
         >
           {projects.map((project, index) => (
             <ProjectGroup
@@ -173,7 +180,7 @@ function ProjectGroup({
       data-project-reveal={reveal ? "" : undefined}
       className={cn(
         "flex",
-        mobile ? "mb-16 flex-col gap-4" : "w-max shrink-0 items-start gap-4",
+        mobile ? "flex-col gap-4" : "w-max shrink-0 items-start gap-4",
         reveal && "project-reveal",
         reveal && revealDelay === 0 && "is-visible",
       )}
