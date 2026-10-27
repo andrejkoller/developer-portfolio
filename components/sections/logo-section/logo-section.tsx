@@ -1,9 +1,9 @@
 export const LogoSection = () => {
   return (
     <section className="h-32 flex flex-col w-full animate-fade-up">
-      <div className="flex flex-col items-start flex-1">
+      <h1 className="flex flex-col items-start flex-1">
         {/* SVG Logo coming soon */}
-      </div>
+      </h1>
     </section>
   );
 };
