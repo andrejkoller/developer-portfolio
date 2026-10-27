@@ -114,7 +114,7 @@ export default function ProjectsView() {
       {/* Back */}
       <div
         className={cn(
-          "fixed top-0 z-70 flex h-16 w-full items-center px-6",
+          "flex h-16 w-full items-center px-6",
           "bg-(--background) animate-fade-in",
           "relative",
           "before:pointer-events-none before:absolute before:inset-x-0 before:bottom-0 before:z-10",
