@@ -3,7 +3,6 @@
 import * as React from "react";
 import { ThemeContext } from "./theme-context";
 import type { Theme } from "./types";
-import { playThemeSound } from "@/lib/theme-sound";
 
 const getServerSnapshot = (): Theme => "dark";
 
@@ -70,8 +69,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
           );
         }
       }
-
-      playThemeSound(newTheme === "dark");
 
       const apply = () => {
         document.documentElement.dataset.theme = newTheme;
