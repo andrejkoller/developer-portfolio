@@ -21,7 +21,7 @@ export const IntroductionSection = () => {
         Passionate about exploring new technologies and turning ideas into
         reality through polished, thoughtfully crafted projects.
       </p>
-      <p className="mb-4 leading-relaxed">
+      <p className="leading-relaxed">
         Get in touch:{" "}
         <Link
           href="mailto:contact@andrejkoller.com"
