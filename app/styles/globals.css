@@ -5,19 +5,19 @@
   --layout-max-width: 32rem;
 
   /* Core */
-  --background: #f7f7f7;
+  --background: #fafafa;
   --foreground: #000000;
 
   /* Supporting */
   --muted: #666666;
-  --accent: #ebebeb;
+  --accent: #f0f0f0;
 
   /* Primary */
   --primary: #000000;
-  --primary-foreground: #f7f7f7;
+  --primary-foreground: #fafafa;
 
   /* Optional extras */
-  --border: #e0e0e0;
+  --border: #e5e5e5;
 
   /* Selection */
   --selection-background: var(--primary);
