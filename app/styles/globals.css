@@ -5,19 +5,19 @@
   --layout-max-width: 32rem;
 
   /* Core */
-  --background: #fafafa;
-  --foreground: #111111;
+  --background: #f7f7f7;
+  --foreground: #000000;
 
   /* Supporting */
-  --muted: #6b6b6b;
-  --accent: #f0f0f0;
+  --muted: #666666;
+  --accent: #ebebeb;
 
   /* Primary */
-  --primary: #111111;
-  --primary-foreground: #fafafa;
+  --primary: #000000;
+  --primary-foreground: #f7f7f7;
 
   /* Optional extras */
-  --border: #e5e5e5;
+  --border: #e0e0e0;
 
   /* Selection */
   --selection-background: var(--primary);
@@ -26,19 +26,19 @@
 
 [data-theme="dark"] {
   /* Core */
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
+  --background: #050505;
+  --foreground: #ffffff;
 
   /* Supporting */
   --muted: #8a8a8a;
-  --accent: #171717;
+  --accent: #121212;
 
   /* Primary */
-  --primary: #f5f5f5;
-  --primary-foreground: #0a0a0a;
+  --primary: #ffffff;
+  --primary-foreground: #050505;
 
   /* Optional extras */
-  --border: #262626;
+  --border: #1a1a1a;
 
   /* Selection */
   --selection-background: var(--primary);
