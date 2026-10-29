@@ -11,13 +11,13 @@ export const IntroductionSection = () => {
   const years = getExperienceYears();
 
   return (
-    <section className="animate-fade-up delay-1">
-      <p className="mb-4 leading-relaxed">
+    <section className="flex flex-col gap-4 animate-fade-up delay-1">
+      <p className="leading-relaxed">
         I’m Andrej Koller - a Designer and Frontend Engineer with {years}+ years
         of experience, known for pixel-perfect execution and an obsessive
         attention to detail.
       </p>
-      <p className="mb-4 leading-relaxed">
+      <p className="leading-relaxed">
         Passionate about exploring new technologies and turning ideas into
         reality through polished, thoughtfully crafted projects.
       </p>
