@@ -138,7 +138,7 @@ export default function ProjectsView() {
         <div
           ref={scrollRef}
           className={cn(
-            "hidden h-full w-full items-center gap-10 overflow-x-auto overflow-y-hidden px-6 md:flex",
+            "hidden h-full w-full items-center gap-16 overflow-x-auto overflow-y-hidden px-6 md:flex",
             "scrollbar-none [&::-webkit-scrollbar]:hidden scroll-auto",
             ready ? "animate-fade-in delay-1" : "invisible",
           )}
@@ -193,7 +193,9 @@ function ProjectGroup({
           : undefined
       }
     >
-      <div className={cn("flex flex-col", !mobile && "w-100 shrink-0 pr-8")}>
+      <div
+        className={cn("flex flex-col", !mobile && "w-100 shrink-0 pt-4 pr-8")}
+      >
         <h2 className="mb-4">
           <Link
             href={project.url}

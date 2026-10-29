@@ -9,7 +9,7 @@ export const PortfolioSection = () => {
     <section className="animate-fade-up delay-3">
       <h2 className="mb-4 text-sm font-medium">{section.title}</h2>
 
-      <ul className="grid grid-cols-2 gap-3">
+      <ul className="grid grid-cols-2 gap-4">
         {section.projects.map((project) => (
           <li key={project.key} className="min-w-0">
             <Link
