@@ -11,6 +11,11 @@ export const experienceConfig: Experience[] = [
     year: "2026",
   },
   {
+    key: "akirune",
+    company: "Akirune",
+    year: "2026",
+  },
+  {
     key: "athanasa",
     company: "Athanasa",
     year: "2025",

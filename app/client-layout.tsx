@@ -8,7 +8,10 @@ export default function ClientLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ThemeProvider>
+      {/* Main content */}
       <main aria-label="Main content">{children}</main>
+
+      {/* Footer */}
       <Footer />
     </ThemeProvider>
   );

@@ -4,7 +4,7 @@ export const ExperienceSection = () => (
   <section className="animate-fade-up delay-2">
     <h2 className="mb-4 text-sm font-medium">Past Experience</h2>
 
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-1">
       {experienceConfig.map((experience) => (
         <div
           key={experience.key}
