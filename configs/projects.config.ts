@@ -31,7 +31,7 @@ export const projectsConfig: Project[] = [
     key: "athanasa",
     title: "Athanasa",
     description:
-      "A cloud platform focused on clarity and control — web and security tooling shaped into a precise, product-ready experience.",
+      "A cloud platform for shipping and running modern web products — deployment, edge delivery, and the infrastructure around them in one place.",
     url: "https://athanasa.com",
     alt: "Athanasa Cloud Platform",
     images: [
@@ -46,16 +46,16 @@ export const projectsConfig: Project[] = [
     key: "kleisa",
     title: "Kleisa",
     description:
-      "Security-oriented product design — interfaces and flows that make complex protection feel calm, legible, and trustworthy.",
+      "Authentication and identity for applications — sign-in, access control, and user management designed to stay clear under real product complexity.",
     url: "https://kleisa.com",
-    alt: "Kleisa Security",
+    alt: "Kleisa Authentication",
     images: [{ width: 1000 }, { width: 700 }, { width: 880 }],
   },
   {
     key: "omeliaui",
     title: "Omelia UI",
     description:
-      "A component library built for consistency — reusable primitives, clear patterns, and a system designers and developers can share.",
+      "An open-source component library you can own and extend — accessible primitives, clear patterns, and a system built for real product UIs.",
     url: "https://omeliaui.com",
     alt: "Omelia UI Component Library",
     images: [{ width: 1080 }, { width: 720 }, { width: 900 }, { width: 640 }],
@@ -64,7 +64,7 @@ export const projectsConfig: Project[] = [
     key: "sophiajs",
     title: "Sophia JS",
     description:
-      "A JavaScript framework aimed at structure and speed — practical APIs, thoughtful defaults, and a foundation for long-lived apps.",
+      "An open-source framework for full-stack web apps — routing, rendering, and structure aimed at fast development and long-term maintainability.",
     url: "https://sophiajs.com",
     alt: "Sophia JS Framework",
     images: [{ width: 1040 }, { width: 760 }, { width: 920 }, { width: 680 }],
@@ -73,7 +73,7 @@ export const projectsConfig: Project[] = [
     key: "loftycharts",
     title: "Lofty Charts",
     description:
-      "A charting library for readable data — clean defaults, flexible composition, and visuals that stay sharp in real product UIs.",
+      "An open-source charting library for dashboards and data-heavy interfaces — flexible series, clean defaults, and visuals that stay readable at scale.",
     url: "https://loftycharts.com",
     alt: "Lofty Charts Library",
     images: [{ width: 1120 }, { width: 780 }, { width: 900 }],
@@ -82,7 +82,7 @@ export const projectsConfig: Project[] = [
     key: "eleganticons",
     title: "Elegant Icons",
     description:
-      "An icon set with disciplined geometry — consistent strokes, balanced forms, and a system that scales across product surfaces.",
+      "An open-source icon set with consistent geometry — built for product UI, docs, and marketing with a unified stroke and sizing system.",
     url: "https://eleganticons.com",
     alt: "Elegant Icons Library",
     images: [{ width: 800 }, { width: 640 }, { width: 760 }],
@@ -91,18 +91,18 @@ export const projectsConfig: Project[] = [
     key: "fermola",
     title: "Fermola",
     description:
-      "Identity and digital presence for a publishing house — editorial typography, quiet layouts, and a durable visual system.",
+      "A publishing house for sheet music and related editions — careful typography, clear scores, and a digital presence shaped around the catalogue.",
     url: "https://fermola.com",
-    alt: "Fermola Publishing House",
+    alt: "Fermola Music Publishing House",
     images: [{ width: 900 }, { width: 1100 }, { width: 700 }, { width: 860 }],
   },
   {
-    key: "highbible",
-    title: "High Bible",
+    key: "hisversion",
+    title: "His Version",
     description:
-      "A platform for scripture and study — clear reading, thoughtful structure, and tools that support faith-centered daily use.",
-    url: "https://highbible.com",
-    alt: "High Bible Platform",
-    images: [{ width: 1020 }, { width: 740 }, { width: 900 }, { width: 680 }],
+      "A digital Christian community with tools to grow in faith and share it with others — teaching, connection, and everyday practice online.",
+    url: "https://hisversion.com",
+    alt: "His Version Christian Community",
+    images: [{ width: 1000 }, { width: 800 }, { width: 900 }],
   },
 ];
