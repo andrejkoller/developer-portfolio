@@ -22,22 +22,22 @@ export const portfolioConfig: PortfolioSection = {
       alt: "Athanasa Cloud Platform",
     },
     {
-      key: "fermola",
-      title: "Fermola",
-      description: "Publishing House",
-      alt: "Fermola Publishing House",
-    },
-    {
       key: "another-project",
       title: "Another Project",
       description: "Description of another project",
       alt: "Another Project Alt Text",
     },
     {
-      key: "yet-another-project",
-      title: "Yet Another Project",
-      description: "Description of yet another project",
-      alt: "Yet Another Project Alt Text",
+      key: "fermola",
+      title: "Fermola",
+      description: "Publishing House",
+      alt: "Fermola Publishing House",
+    },
+    {
+      key: "hisversion",
+      title: "His Version",
+      description: "Description of His Version project",
+      alt: "His Version Alt Text",
     },
   ],
 };

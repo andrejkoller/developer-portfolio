@@ -6,14 +6,14 @@ export interface Experience {
 
 export const experienceConfig: Experience[] = [
   {
-    key: "fermola",
-    company: "Fermola",
-    year: "2026",
+    key: "hisversion",
+    company: "His Version",
+    year: "2028",
   },
   {
-    key: "akirune",
-    company: "Akirune",
-    year: "2026",
+    key: "fermola",
+    company: "Fermola",
+    year: "2027",
   },
   {
     key: "athanasa",
